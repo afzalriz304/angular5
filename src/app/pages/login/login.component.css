@@ -1,0 +1,59 @@
+.epilen-navbar-login{
+	background-color: #fff !important;
+    color: gray !important;
+    border-radius: 20px !important;
+    border: 1px solid lightgray !important;
+}
+
+.card{
+	margin-top: 37px;
+    box-shadow: 0px 3px 32px 7px lightgrey;
+    margin-right: 20px;
+}
+.primary-heading{
+	font-weight: 500;
+	font-size: 1.7rem;
+	color: #333;
+}
+
+.card-body{
+	margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.secondary-heading{
+	margin-top: 10px;
+	font-size:15px;
+}
+.terms{
+	float: right;
+	font-size: 11px;
+}
+.terms a{
+	color: #2196f3 !important;
+}
+.forgot-password{
+	float: right;
+	font-size: 11px;
+}
+.forgot-password a{
+	color: #311b92 !important;
+}
+.login-form{
+	margin-top: 70px;
+    font-size: 18px;
+    color: #474747;
+}
+
+.login-form .form-group{
+	margin-bottom: 60px;
+}
+
+.epilen-btn-sign-in{
+	border-radius: 20px !important;
+    width: 28% !important;
+    color: #333333 !important;
+    border: 1px solid #333333 !important;
+    background-color: #fff !important;
+    float: right;
+}

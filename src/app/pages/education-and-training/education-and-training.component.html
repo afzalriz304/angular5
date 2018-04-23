@@ -1,0 +1,210 @@
+<div>  
+	<div id="personalInfoModal">
+	
+	<div class="modal-body">
+	  
+	  	<div class="col-sm-12 col-md-12">
+			<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+
+
+	  	<div class="row epilen-modal-header">
+			<div class="text-center col-sm-12 col-md-12">
+				<h4 class="modal-title w6"><span><i class="fa fa-plus" aria-hidden="true"></i></span> Education and Training</h4>
+				<div class="w4">Your data is yours. Your data is protected. Your data is portable</div>
+				<a class="w6" href="#">Terms & Conditions</a>
+			</div>
+			
+		</div>
+		
+		<div>
+			<nav class="nav nav-pills nav-justified" class="row">
+			  <a class="nav-item nav-link text-sm-center active col-sm-6" #academicDegree (click)="changeTab('academicDegree',academicDegree);">Academic Degree</a>
+			  <a class="nav-item nav-link text-sm-center col-sm-6" #professionalTraining (click)="changeTab('professionalTraining',professionalTraining);">Professional Training</a>
+			</nav>
+
+			<div class="tabs" id="academicDegree">
+
+
+
+
+				<!-- ACTIVE Affilitations -->
+				<div class="card">
+				  
+				  <div class="card-body">
+				   	<div class="card" style="width: 20rem;" *ngFor="let affiliation of activeAffiliations">
+					  <div class="card-body">
+					    <h4 class="card-title">{{affiliation.hosName}}</h4>
+					    <h6 class="card-subtitle mb-2 text-muted">{{affiliation.designation}}</h6>
+					    <p class="card-text">{{affiliation.city}}</p>
+					    <p class="card-text">{{affiliation.dateStarted}} - {{affiliation.dateEnd}}</p>
+					  </div>
+					</div>
+				  </div>
+
+
+
+				<p>
+				  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+				          [attr.aria-expanded]="!isCollapsed" aria-controls="addDegree" id="addDegree" >
+				    Add Documents
+				  </button>
+				</p>
+				<div id="addDegree" [ngbCollapse]="isCollapsed">
+				  <div class="card">
+				    <div class="card-body">
+				    	<!-- Form to add Affiliations -->
+					      <form>
+
+					      	<div class="form-group row">
+						      <label for="institution" class="col-sm-3 col-form-label">Name of Degree</label>
+						      <div class="col-sm-9">
+						        <input type="text" class="form-control" id="institution" placeholder="Name of Degree"
+						        [(ngModel)]="degreeName" (ngModelChange)="degreeName =$event" name="degreeName">
+						      </div>
+						    </div>
+
+							<div class="form-group row">
+						      <label for="institution" class="col-sm-3 col-form-label">Institution</label>
+						      <div class="col-sm-9">
+						        <input type="text" class="form-control" id="institution" placeholder="institution"
+						        [(ngModel)]="hospitalName" (ngModelChange)="hospitalName =$event" name="institution" [ngbTypeahead]="searchHospital" [resultFormatter]="formatter">
+						      </div>
+						    </div>
+
+
+						    <div class="form-group row">
+						      	<label for="" class="col-sm-4 col-form-label">Year</label>
+					        	<div class="col-sm-8" id="">
+					        		<div class="row">
+					        			<select class="form-control col-sm-2" id="exampleSelect2" [ngModel]="year"
+								    	(ngModelChange)="year =$event" name="fromYY">
+								      		<option *ngFor="let yy of year">{{yy}}</option>
+								    	</select>
+					        		</div>
+					        	</div>
+						    </div>
+
+						    <div class="form-group row">
+						      <label for="major" class="col-sm-3 col-form-label">Major</label>
+						      <div class="col-sm-8">
+						        <input type="text" class="form-control" id="major" placeholder="major" name="major" [ngModel]="major"
+						        (ngModelChange)="major =$event">
+						      </div>
+						    </div>
+
+						    <div class="form-group row">
+						      <div (click)="updateAffilition();" class="col-sm-12 text-center"><button class="btn btn-primary">Update</button></div>
+						    </div>
+
+						</form>
+				    </div>
+				  </div>
+				</div>	
+
+
+				</div>
+			</div>
+				
+
+				
+				
+				
+
+
+
+
+			<!-- Pending Affiliations -->
+			<div class="tabs hideTab" id="professionalTraining">
+
+				
+				<!-- PAST Affilitations -->
+				<div class="card">
+				  
+				  <div class="card-body">
+				   	<div class="card" style="width: 20rem;" *ngFor="let affiliation of pastAffiliations">
+					  <div class="card-body">
+					    <h4 class="card-title">{{affiliation.hosName}}</h4>
+					    <h6 class="card-subtitle mb-2 text-muted">{{affiliation.designation}}</h6>
+					    <p class="card-text">{{affiliation.city}}</p>
+					    <p class="card-text">{{affiliation.dateStarted}} - {{affiliation.dateEnd}}</p>
+					  </div>
+					</div>
+				  </div>
+
+
+				  <!-- add Professional Training -->
+
+				<p>
+				  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+				          [attr.aria-expanded]="!isCollapsed" aria-controls="addDegree" id="addDegree" >
+				    Add Documents
+				  </button>
+				</p>
+				<div id="addDegree" [ngbCollapse]="isCollapsed">
+				  <div class="card">
+				    <div class="card-body">
+				    	<!-- Form to add Affiliations -->
+					      <form>
+
+					      	<div class="form-group row">
+						      <label for="institution" class="col-sm-3 col-form-label">Name of Degree/Certification</label>
+						      <div class="col-sm-9">
+						        <input type="text" class="form-control" id="institution" placeholder="Name of Degree"
+						        [(ngModel)]="degreeName" (ngModelChange)="degreeName =$event" name="degreeName">
+						      </div>
+						    </div>
+
+							<div class="form-group row">
+						      <label for="institution" class="col-sm-3 col-form-label">Institution/Organization Name</label>
+						      <div class="col-sm-9">
+						        <input type="text" class="form-control" id="institution" placeholder="institution"
+						        [(ngModel)]="hospitalName" (ngModelChange)="hospitalName =$event" name="institution" [ngbTypeahead]="searchHospital" [resultFormatter]="formatter">
+						      </div>
+						    </div>
+
+
+						    <div class="form-group row">
+						      	<label for="" class="col-sm-4 col-form-label">Year</label>
+					        	<div class="col-sm-8" id="">
+					        		<div class="row">
+					        			<select class="form-control col-sm-2" id="exampleSelect2" [ngModel]="year"
+								    	(ngModelChange)="year =$event" name="fromYY">
+								      		<option *ngFor="let yy of year">{{yy}}</option>
+								    	</select>
+					        		</div>
+					        	</div>
+						    </div>
+
+						    <div class="form-group row">
+						      <label for="major" class="col-sm-3 col-form-label">Major</label>
+						      <div class="col-sm-8">
+						        <input type="text" class="form-control" id="major" placeholder="major" name="major" [ngModel]="major"
+						        (ngModelChange)="major =$event">
+						      </div>
+						    </div>
+
+						    <div class="form-group row">
+						      <div (click)="updateAffilition();" class="col-sm-12 text-center"><button class="btn btn-primary">Update</button></div>
+						    </div>
+
+						</form>
+				    </div>
+				  </div>
+				</div>
+
+
+				</div>
+
+			</div>
+
+
+		</div>	
+
+	</div>
+</div>
+
+
+

@@ -1,0 +1,66 @@
+<div *ngIf="professionalData!=undefined">
+
+<div id="personalInfoModal">
+<div class="modal-body">
+<!--
+	Professional Information - Practice Profile
+-->
+<div class="col-sm-12 col-md-12">
+	<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+
+
+<div class="row epilen-modal-header">
+	<div class="text-center col-sm-12 col-md-12">
+		<h4 class="modal-title w6"><span><i class="fa fa-plus" aria-hidden="true"></i></span> Professional Information</h4>
+		<div class="w4">Your data is yours. Your data is protected. Your data is portable</div>
+		<a class="w6" href="#">Terms & Conditions</a>
+	</div>
+	
+</div>
+
+
+<!-- Form begins -->
+<form id="pracProModalUpdateForm" cta="signUp" class="pracProModalUpdateForm">
+							
+	<div id="docBioInput">
+				
+		<label id="docBioLabel" class="w6 pracProModalUpdateFormLabel">A short professional intro</label>
+		
+		<textarea class="form-control w5 pracProModalUpdateFormArea innerScroll" rows="4" id="docBio" name="docBio" itype="para" iName="Intro" irequire="false" placeholder="write a short professional bio..." [ngModel]="professionalData.professionalBio" (ngModelChange)="professionalData.professionalBio = $event"></textarea>		
+		
+	</div>
+	
+	<div id="docSpecialityInput">
+				
+		<label id="docSpecialityLabel" class="w6 pracProModalUpdateFormLabel">Primary Specialization</label>
+		
+		<select id="docSpeciality" name="docSpeciality" class="form-control w4 pracProModalUpdateSelect outln-none" placeholder="" style="width: 60%;" [ngModel]="professionalData.specialization" (ngModelChange)="professionalData.specialization = $event">
+			<option *ngFor="let item of specialities">{{item.name}}</option>
+		</select>
+				
+	</div>
+									
+	<div id="docCityInput" style="margin-top: 2vh;">
+				
+		<label id="docCityLabel" class="w6 pracProModalUpdateFormLabel">City</label>
+				
+		<input type="text" class="typeahead form-control w5 pracProModalUpdateFormInput" autocomplete="off" itype="name" iName="City" irequire="true" id="docCity" name="docCity" placeholder="select your city" value="" [(ngModel)]="professionalData.city" [ngbTypeahead]="searchCity" [resultFormatter]="formatter" />
+				
+	</div>
+										
+	<div class="ta-c" style="margin-top: 3vh;">
+				
+		<a id="pracProModalUpdateCTA" name="professional" type="btn" rootDIR="epilenR" class="w5 prim-btn pracProModalUpdateFormCTA txt-decor-none cursor-p txt-tr-uc pos-rel noselect" (click)="updateProfessionalProfile()">
+			Update
+		</a>
+				
+	</div>
+				
+</form>
+
+</div>
+
+</div>

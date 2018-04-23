@@ -1,0 +1,68 @@
+.active{
+	border: 2px solid #7FC7F9;
+    border-left: #fff;
+    border-right: #fff;
+    border-top: #fff;
+}
+
+.hideTab{
+	display: none;
+}
+
+#practicing {
+	margin-left: -6%;
+}
+
+#ctc{
+	margin-left: -8%;
+}
+
+#backslash{
+	font-size: 14px;
+}
+
+.btn-primary{
+	border-radius: 20px !important;
+}
+
+.tabs{
+	margin-top: 3%;
+}
+
+#addAffiliation{
+	margin: 0px 10px 10px 19px;
+}
+
+#addAffiliationBtn{
+	margin-left: 3%;
+}
+.card-header{
+	background-color: #12375C;
+	color: #fff;
+}
+
+#checkboxStyle{
+	padding: 10px 10px 10px 10px;
+}
+.weekDays{
+	font-size: 13px;
+    padding: 5px 5px 5px 5px;
+    border: 1px solid gray;
+}
+
+.dayBtn{
+	width: 6em;
+    height: 3em;
+    background-color: transparent;
+    border: 1px solid lightgrey;
+    font-size: 12px;
+    font-weight: 600;
+}
+.timeSlot{
+	padding: 0px 0px 0px 0px;
+}
+.timeSeparator{
+	font-size: 14px;
+    margin-left: 1px;
+    margin-right: 1px;
+}

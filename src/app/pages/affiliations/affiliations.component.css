@@ -1,0 +1,38 @@
+.active{
+	border: 2px solid #7FC7F9;
+    border-left: #fff;
+    border-right: #fff;
+    border-top: #fff;
+}
+
+.hideTab{
+	display: none;
+}
+
+#practicing {
+	margin-left: -6%;
+}
+
+#ctc{
+	margin-left: -8%;
+}
+
+#backslash{
+	font-size: 14px;
+}
+
+.btn-primary{
+	border-radius: 20px !important;
+}
+
+.tabs{
+	margin-top: 3%;
+}
+
+#addAffiliation{
+	margin: 0px 10px 10px 19px;
+}
+
+#addAffiliationBtn{
+	margin-left: 3%;
+}

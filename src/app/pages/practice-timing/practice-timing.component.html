@@ -1,0 +1,149 @@
+<div *ngIf="response!=undefined">  
+	<div id="personalInfoModal">
+	
+	<div class="modal-body">
+	  
+		<div class="col-sm-12 col-md-12">
+			<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+
+
+	  	<div class="row epilen-modal-header">
+			<div class="text-center col-sm-12 col-md-12">
+				<h4 class="modal-title w6"><span><i class="fa fa-plus" aria-hidden="true"></i></span> Practice Timings</h4>
+				<div class="w4">Your data is yours. Your data is protected. Your data is portable</div>
+				<a class="w6" href="#">Terms & Conditions</a>
+			</div>
+			
+		</div>
+
+
+		<div>
+			<nav class="nav nav-pills nav-justified" class="row">
+			  <a class="nav-item nav-link text-sm-center active col-sm-6" #face2face (click)="changeTab('face2face',face2face);">Face-2-Face Consultations</a>
+			  <a class="nav-item nav-link text-sm-center col-sm-6" #econsultations (click)="changeTab('econsultations',econsultations);">E-Consultations</a>
+			</nav>
+
+			<div class="tabs" id="face2face">
+
+
+				<!-- ACTIVE Affilitations -->
+				<div class="card">
+				  
+				  <div class="card-body">
+				   	<div class="card">
+					  <div class="row">
+					    
+					  	<!-- slot Calender -->
+					    
+					    <div class="col-sm-3">
+					    	<tr *ngFor="let slot of weekSlot">
+					    		<td id="checkboxStyle"><input type="checkbox" name="activeSlot" [(ngModel)]="slot.avail" (ngModelChange)="deleteSlot(slot.day,slot.avail)"></td>
+					    		<td><button id ={{slot.day}} class="dayBtn" (click)="openTooltip(slot);">{{slot.day}}</button></td>
+					    	</tr>
+					    </div>
+
+					    <div class="col-sm-9">
+					    	<div class="card">
+					    		
+					    		<div class="card-body">
+					    			<div class="card-title">
+					    				<h3>{{slotDay}}</h3>
+					    			</div>
+
+					    			<form>
+					    				
+
+					    				<ngb-tabset>
+										  
+										  <!-- Morning -->
+										  <ngb-tab title="Morning">
+										    <ng-template ngbTabContent>
+										    	<app-add-slot-template [daySlotObject]="slotObject" [slotType]="morning" (submitTimeSlot)=onSubmitSlot($event)></app-add-slot-template>
+										    </ng-template>
+										  </ngb-tab>
+
+										  <!-- Afternoon -->
+										  <ngb-tab title="Afternoon">
+										    <ng-template ngbTabContent>
+										    	<app-add-slot-template [daySlotObject]="slotObject" [slotType]="afternoon" (submitTimeSlot)=onSubmitSlot($event)></app-add-slot-template>
+										    </ng-template>
+										  </ngb-tab>
+
+										  <!-- Evening -->
+										  <ngb-tab title="Evening">
+										    <ng-template ngbTabContent>
+										    	<app-add-slot-template [daySlotObject]="slotObject" [slotType]="evening" (submitTimeSlot)=onSubmitSlot($event)></app-add-slot-template>
+										    </ng-template>
+										  </ngb-tab>
+
+										  <!-- Night -->
+										  <ngb-tab title="Night">
+										    <ng-template ngbTabContent>
+										    	<app-add-slot-template [daySlotObject]="slotObject" [slotType]="night" (submitTimeSlot)=onSubmitSlot($event)></app-add-slot-template>
+										    </ng-template>
+										  </ngb-tab>
+										  
+										</ngb-tabset>
+
+					    			</form>
+					    		</div>
+					    	</div>
+					    </div>
+
+					  </div>
+					</div>
+				  </div>
+
+
+
+				
+
+
+				</div>
+			</div>
+				
+
+				
+				
+				
+
+
+
+
+			<!-- Pending Affiliations -->
+			<div class="tabs hideTab" id="econsultations">
+
+				
+				<!-- PAST Affilitations -->
+				<div class="card">
+				  
+				  <div class="card-body">
+				   	<div class="card" style="width: 20rem;" *ngFor="let affiliation of pastAffiliations">
+					  <div class="card-body">
+					    <h4 class="card-title">{{affiliation.hosName}}</h4>
+					    <h6 class="card-subtitle mb-2 text-muted">{{affiliation.designation}}</h6>
+					    <p class="card-text">{{affiliation.city}}</p>
+					    <p class="card-text">{{affiliation.dateStarted}} - {{affiliation.dateEnd}}</p>
+					  </div>
+					</div>
+				  </div>
+
+
+				  <!-- add Professional Training -->
+
+
+				</div>
+
+			</div>
+
+
+		</div>	
+
+	</div>
+</div>
+
+
+

@@ -1,0 +1,97 @@
+
+<div class="modal-body">
+
+	<div class="row epilen-modal-header">
+		<div class="text-center col-sm-12 col-md-12">
+			<h4 class="w5">Personal Information</h4>
+			<div><span></span>Your data is yours. Your data is protected. Your data is portable</div>
+			<a href="#">Terms & Condition</a>
+		</div>
+		
+	</div>
+
+	<div class="col-sm-12 col-md-12 modal-main-body" *ngIf="personalInfoData!=undefined">
+		<div>
+			<form class="row">
+				
+				<div class="col-md-12">
+					
+					<div>
+						<div class="form-group text-center">
+							<i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i>
+						</div>
+
+						<div class="form-group">
+							<label class="w6">Your full name</label>
+							<input type="text" name="name" [(ngModel)]="personalInfoData.name" 
+							class="form-control epilen-input"/>
+						</div>
+
+						<div class="form-group">
+
+							<label class="w6">Gender</label>
+
+							<div class="row">
+								<div class="col-lg-3">
+									<input type="radio" [(ngModel)]="personalInfoData.gender" name="options" value="female">
+									<span type="txt" class="w5 pos-rel">Female</span>
+								</div>
+																
+								<div class="col-lg-3">
+									<input type="radio" [(ngModel)]="personalInfoData.gender" name="options" value="male">
+									<span type="txt" class="w5 pos-rel">Male</span>
+								</div>
+
+								<div class="col-lg-3">
+									<input type="radio" [(ngModel)]="personalInfoData.gender" name="options" value="other">
+									<span type="txt" class="w5 pos-rel">Other</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							
+							<label class="w6">Date of Birth</label>
+									
+							<div class="row">
+								<div class="col-lg-3">	
+									<select id="dobDD" name="dobDD" class="form-control w4"
+									[(ngModel)]="personalInfoData.dob.date" >
+										<option *ngFor="let item of date">{{item}}</option> 
+									</select>		
+								</div>
+											
+								<div class="col-lg-5">
+												
+									<select id="dobMM" name="dobMM" class="form-control w4"
+									[(ngModel)]="personalInfoData.dob.month">
+										<option *ngFor="let mm of month ; index as i;" value="{{i}}">{{mm}}</option>
+									</select>
+												
+								</div>
+											
+								<div class="col-lg-4">
+											
+									<select id="dobYY" name="dobYY" class="form-control w4"
+									[(ngModel)]="personalInfoData.dob.year">
+										<option *ngFor="let yy of year">{{yy}}</option>
+									</select>
+											
+								</div>
+										
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-md-12 text-center">
+								<button class="btn btn-primary epilen-btn-primary" (click)="submitPersonalData();">Update</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>

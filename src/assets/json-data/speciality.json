@@ -1,0 +1,550 @@
+{"specialities":[
+        {
+            "name": "Addiction Medicine",
+            "code": "100"
+        },
+        {
+            "name": "ADHD & Autism",
+            "code": "101"
+        },
+		{
+			"name": "Aerospace Medicine",
+			"code": "102"
+		},
+		{
+			"name": "Aesthetic Medicine",
+			"code": "103"
+		},
+		{
+			"name": "Anesthesiology",
+			"code": "104"
+		},
+		{
+			"name": "Anti-Aging Medicine",
+			"code": "105"
+		},
+		{
+			"name": "Bariatrics",
+			"code": "106"
+		},
+		{
+			"name": "Breast Surgery",
+			"code": "107"
+		},
+		{
+			"name": "Cardiologist",
+			"code": "108"
+		},
+		{
+			"name": "Clinical Genetics",
+			"code": "109"
+		},
+		{
+			"name": "Clinical Lipidology",
+			"code": "110"
+		},
+		{
+			"name": "Clinical Psychology",
+			"code": "111"
+		},
+		{
+			"name": "Cosmetic Surgery",
+			"code": "112"
+		},
+		{
+			"name": "Critical Care",
+			"code": "113"
+		},
+		{
+			"name": "Dentist",
+			"code": "114"
+		},
+		{
+			"name": "Dentistry - Cosmetic",
+			"code": "115"
+		},
+		{
+			"name": "Dentistry - Endodontics",
+			"code": "116"
+		},
+		{
+			"name": "Dentistry - Orthodontics",
+			"code": "117"
+		},
+		{
+			"name": "Dentistry - Pediatric",
+			"code": "118"
+		},
+		{
+			"name": "Dentistry - Periodontics",
+			"code": "119"
+		},
+		{
+			"name": "Dentistry - Prosthodontics",
+			"code": "120"
+		},
+		{
+			"name": "Dermatology",
+			"code": "121"
+		},
+		{
+			"name": "Dermatopathology",
+			"code": "122"
+		},
+		{
+			"name": "Diagnostic Radiology",
+			"code": "123"
+		},
+		{
+			"name": "Emergency Medicine",
+			"code": "124"
+		},
+		{
+			"name": "ENT - Head & Neck Surgery",
+			"code": "125"
+		},
+		{
+			"name": "ENT - Head & Neck Surgery - Pediatric",
+			"code": "126"
+		},
+		{
+			"name": "Environmental Health",
+			"code": "127"
+		},
+		{
+			"name": "Facial Plastic Surgery",
+			"code": "128"
+		},
+		{
+			"name": "Family Medicine",
+			"code": "129"
+		},
+		{
+			"name": "Fertility Medicine",
+			"code": "130"
+		},
+		{
+			"name": "General Practice",
+			"code": "131"
+		},
+		{
+			"name": "Genetics Counseling",
+			"code": "132"
+		},
+		{
+			"name": "Gynecology",
+			"code": "133"
+		},
+		{
+			"name": "Gynecology - Oncology",
+			"code": "134"
+		},
+		{
+			"name": "Hair Restoration",
+			"code": "135"
+		},
+		{
+			"name": "Holistic Medicine",
+			"code": "136"
+		},
+		{
+			"name": "Integrative Medicine",
+			"code": "137"
+		},
+		{
+			"name": "Internal Medicine",
+			"code": "138"
+		},
+		{
+			"name": "Internal Medicine & Pediatrics",
+			"code": "139"
+		},
+		{
+			"name": "Internal Medicine - Allergy",
+			"code": "140"
+		},
+		{
+			"name": "Internal Medicine - Allergy & Immunology",
+			"code": "141"
+		},
+		{
+			"name": "Internal Medicine - Cardiology",
+			"code": "142"
+		},
+		{
+			"name": "Internal Medicine - Diabetology",
+			"code": "143"
+		},
+		{
+			"name": "Internal Medicine - Endocrinology",
+			"code": "144"
+		},
+		{
+			"name": "Internal Medicine - Gastroenterology",
+			"code": "145"
+		},
+		{
+			"name": "Internal Medicine - Geriatrics",
+			"code": "146"
+		},
+		{
+			"name": "Internal Medicine - Hematology",
+			"code": "147"
+		},
+		{
+			"name": "Internal Medicine - Hematology & Oncology",
+			"code": "148"
+		},
+		{
+			"name": "Internal Medicine - Hepatology",
+			"code": "149"
+		},
+		{
+			"name": "Internal Medicine - Hospital-based practice",
+			"code": "150"
+		},
+		{
+			"name": "Internal Medicine - Immunology",
+			"code": "151"
+		},
+		{
+			"name": "Internal Medicine - Infectious Disease",
+			"code": "152"
+		},
+		{
+			"name": "Internal Medicine - Nephrology & Dialysis",
+			"code": "153"
+		},
+		{
+			"name": "Internal Medicine - Obstetric Medicine",
+			"code": "154"
+		},
+		{
+			"name": "Internal Medicine - Oncology",
+			"code": "155"
+		},
+		{
+			"name": "Internal Medicine - Pulmonary Critical Care",
+			"code": "156"
+		},
+		{
+			"name": "Internal Medicine - Pulmonology",
+			"code": "157"
+		},
+		{
+			"name": "Internal Medicine - Rheumatology",
+			"code": "158"
+		},
+		{
+			"name": "Internal Medicine - Sleep Medicine",
+			"code": "159"
+		},
+		{
+			"name": "Neurology",
+			"code": "160"
+		},
+		{
+			"name": "Neuroradiology",
+			"code": "161"
+		},
+		{
+			"name": "Neurosurgery",
+			"code": "162"
+		},
+		{
+			"name": "Nuclear Medicine",
+			"code": "163"
+		},
+		{
+			"name": "Obstetrics & Gynecology",
+			"code": "164"
+		},
+		{
+			"name": "Obstetrics & Gynecology - Maternal Fetal Medicine",
+			"code": "165"
+		},
+		{
+			"name": "Obstetrics & Gynecology - Urogynecology",
+			"code": "166"
+		},
+		{
+			"name": "Occupational Medicine",
+			"code": "167"
+		},
+		{
+			"name": "Ophthalmology",
+			"code": "168"
+		},
+		{
+			"name": "Ophthalmology - LASIK Surgery",
+			"code": "169"
+		},
+		{
+			"name": "Ophthalmology - Pediatric",
+			"code": "170"
+		},
+		{
+			"name": "Ophthalmology - Retinal Surgery",
+			"code": "171"
+		},
+		{
+			"name": "Orthopedic Surgery",
+			"code": "172"
+		},
+		{
+			"name": "Orthopedic Surgery - Foot & Ankle",
+			"code": "173"
+		},
+		{
+			"name": "Orthopedic Surgery - Pediatric",
+			"code": "174"
+		},
+		{
+			"name": "Orthopedic Surgery - Reconstruction",
+			"code": "175"
+		},
+		{
+			"name": "Orthopedic Surgery - Spine",
+			"code": "176"
+		},
+		{
+			"name": "Pain Management",
+			"code": "177"
+		},
+		{
+			"name": "Palliative Care",
+			"code": "178"
+		},
+		{
+			"name": "Pathology",
+			"code": "179"
+		},
+		{
+			"name": "Pediatric Rehabilitation Medicine",
+			"code": "180"
+		},
+		{
+			"name": "Pediatric Rheumatology",
+			"code": "181"
+		},
+		{
+			"name": "Pediatrics",
+			"code": "182"
+		},
+		{
+			"name": "Pediatrics - Adolescent Medicine",
+			"code": "183"
+		},
+		{
+			"name": "Pediatrics - Allergy",
+			"code": "184"
+		},
+		{
+			"name": "Pediatrics - Allergy & Asthma",
+			"code": "185"
+		},
+		{
+			"name": "Pediatrics - Cardiology",
+			"code": "186"
+		},
+		{
+			"name": "Pediatrics - Critical Care",
+			"code": "187"
+		},
+		{
+			"name": "Pediatrics - Dermatology",
+			"code": "188"
+		},
+		{
+			"name": "Pediatrics - Developmental & Behavioral",
+			"code": "189"
+		},
+		{
+			"name": "Pediatrics - Emergency Medicine",
+			"code": "190"
+		},
+		{
+			"name": "Pediatrics - Endocrinology",
+			"code": "191"
+		},
+		{
+			"name": "Pediatrics - Gastroenterology",
+			"code": "192"
+		},
+		{
+			"name": "Pediatrics - Hematology & Oncology",
+			"code": "193"
+		},
+		{
+			"name": "Pediatrics - Infectious Disease",
+			"code": "194"
+		},
+		{
+			"name": "Pediatrics - Neonatology",
+			"code": "195"
+		},
+		{
+			"name": "Pediatrics - Nephrology & Dialysis",
+			"code": "196"
+		},
+		{
+			"name": "Pediatrics - Neurology",
+			"code": "197"
+		},
+		{
+			"name": "Pediatrics - Oncology",
+			"code": "198"
+		},
+		{
+			"name": "Pediatrics - Psychiatry",
+			"code": "199"
+		},
+		{
+			"name": "Pediatrics - Pulmonology",
+			"code": "200"
+		},
+		{
+			"name": "Pediatrics - Sports Medicine",
+			"code": "201"
+		},
+		{
+			"name": "Pediatrics - Urology",
+			"code": "202"
+		},
+		{
+			"name": "Pharmacology",
+			"code": "203"
+		},
+		{
+			"name": "Phlebology",
+			"code": "204"
+		},
+		{
+			"name": "Physical & Rehabilitation Medicine",
+			"code": "205"
+		},
+		{
+			"name": "Podiatry",
+			"code": "206"
+		},
+		{
+			"name": "Preventive Medicine",
+			"code": "207"
+		},
+		{
+			"name": "Psychiatry",
+			"code": "208"
+		},
+		{
+			"name": "Psychiatry - Geriatric",
+			"code": "209"
+		},
+		{
+			"name": "Public Health",
+			"code": "210"
+		},
+		{
+			"name": "Radiation Oncology",
+			"code": "211"
+		},
+		{
+			"name": "Radiology",
+			"code": "212"
+		},
+		{
+			"name": "Radiology - Interventional",
+			"code": "213"
+		},
+		{
+			"name": "Sports Medicine",
+			"code": "214"
+		},
+		{
+			"name": "Surgery",
+			"code": "215"
+		},
+		{
+			"name": "Surgery - Colorectal",
+			"code": "216"
+		},
+		{
+			"name": "Surgery - Hand Surgery",
+			"code": "217"
+		},
+		{
+			"name": "Surgery - Head & Neck",
+			"code": "218"
+		},
+		{
+			"name": "Surgery - Oncology",
+			"code": "219"
+		},
+		{
+			"name": "Surgery - Oral & Maxillofacial",
+			"code": "220"
+		},
+		{
+			"name": "Surgery - Pediatric",
+			"code": "221"
+		},
+		{
+			"name": "Surgery - Plastics",
+			"code": "222"
+		},
+		{
+			"name": "Surgery - Thoracic",
+			"code": "223"
+		},
+		{
+			"name": "Surgery - Transplant",
+			"code": "224"
+		},
+		{
+			"name": "Surgery - Trauma",
+			"code": "225"
+		},
+		{
+			"name": "Surgery - Vascular",
+			"code": "226"
+		},
+		{
+			"name": "Toxicology",
+			"code": "227"
+		},
+		{
+			"name": "Transfusion Medicine",
+			"code": "228"
+		},
+		{
+			"name": "Travel Medicine",
+			"code": "229"
+		},
+		{
+			"name": "Undersea & Hyperbaric Medicine",
+			"code": "230"
+		},
+		{
+			"name": "Urgent Care",
+			"code": "231"
+		},
+		{
+			"name": "Urology",
+			"code": "232"
+		},
+		{
+			"name": "Urology - Oncology",
+			"code": "233"
+		},
+		{
+			"name": "Wilderness Medicine",
+			"value": "234"
+		},
+		{
+			"name": "Wound care",
+			"code": "235"
+		},
+		{
+			"name": "Other",
+			"code": "236"
+		}
+]}

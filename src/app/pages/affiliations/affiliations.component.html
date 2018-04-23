@@ -1,0 +1,218 @@
+
+<app-loader *ngIf="loading"></app-loader>
+
+<div *ngIf="affiliationData!=undefined">  
+	<div id="personalInfoModal">
+	
+	<div class="modal-body">
+	  
+		<div class="col-sm-12 col-md-12">
+			<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+
+
+	  	<div class="row epilen-modal-header">
+			<div class="text-center col-sm-12 col-md-12">
+				<h4 class="modal-title w6"><span><i class="fa fa-plus" aria-hidden="true"></i></span> Affiliations</h4>
+				<div class="w4">Your data is yours. Your data is protected. Your data is portable</div>
+				<a class="w6" href="#">Terms & Conditions</a>
+			</div>
+			
+		</div>
+
+
+		
+		<div>
+			<nav class="nav nav-pills nav-justified" class="row">
+				<div class="col-md-2"></div>
+			  	<a class="nav-item nav-link text-sm-center w6 active col-md-3" #activeAffiliation (click)="changeTab('activeAffiliation',activeAffiliation);">Active Affiliation</a>
+			  	<div class="col-md-2"></div>
+			  	<a class="nav-item nav-link text-sm-center w6 col-md-3" #pendingAffiliation (click)="changeTab('pendingAffiliation',pendingAffiliation);">Pending Affiliation</a>
+			  	<div class="col-md-2"></div>
+			</nav>
+
+			<div class="tabs" id="activeAffiliation">
+
+
+
+
+				<!-- ACTIVE Affilitations -->
+				<div class="card">
+				  <div class="card-header">
+				    Active
+				  </div>
+				  <div class="card-body">
+				   	<div class="card" style="width: 20rem;" *ngFor="let affiliation of activeAffiliations">
+					  <div class="card-body">
+					    <h4 class="card-title w6">{{affiliation.hosName | uppercase}}</h4>
+					    <h6 class="card-subtitle mb-2 text-muted w4">{{affiliation.designation}}</h6>
+					    <p class="card-text w4">{{affiliation.city}}</p>
+					    <p class="card-text w4">{{affiliation.dateStarted}} - {{affiliation.dateEnd}}</p>
+					  </div>
+					</div>
+				  </div>
+
+
+
+				  <p>
+				  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+				          [attr.aria-expanded]="!isCollapsed" aria-controls="addAffiliation" id="addAffiliationBtn" >
+				    Add Affiliation
+				  </button>
+				</p>
+				<div id="addAffiliation" [ngbCollapse]="isCollapsed">
+				  <div class="card">
+				    <div class="card-body">
+				    	<!-- Form to add Affiliations -->
+					      <form>
+							<div class="form-group row">
+						      <label for="institution" class="col-sm-3 col-form-label">Institution</label>
+						      <div class="col-sm-9">
+						        <input type="text" class="form-control" id="institution" placeholder="institution"
+						        [(ngModel)]="hospitalName" (ngModelChange)="hospitalName =$event" name="hospitalName" [ngbTypeahead]="searchHospital" [resultFormatter]="formatter">
+						      </div>
+						    </div>
+
+						    <div class="form-group row">
+						      <label for="city" class="col-sm-3 col-form-label">City</label>
+						      <div class="col-sm-4">
+						        <input type="text" class="form-control" id="city" placeholder="city"
+						         [(ngModel)]="hospitalCity" (ngModelChange)="hospitalCity =$event" name="hospitalCity" [ngbTypeahead]="searchCity" [resultFormatter]="formatter">
+						      </div>
+						    </div>
+
+						    <div class="form-group row">
+						      	<label for="" class="col-sm-4 col-form-label">Practicing Since</label>
+					        	<div class="col-sm-8" id="practicing">
+					        		<div class="row">
+					        			<select class="form-control col-sm-2" id="exampleSelect1" [ngModel]="fromMM" 
+					        			(ngModelChange)="fromMM =$event" name="fromMM">
+								      		<option *ngFor="let mm of month ; index as i;" value="{{i}}">{{mm}}</option>
+								    	</select>
+								    	
+								    	<span class="col-sm-1" id="backslash">/</span>
+								    	<select class="form-control col-sm-2" id="exampleSelect2" [ngModel]="fromYY"
+								    	(ngModelChange)="fromYY =$event" name="fromYY">
+								      		<option *ngFor="let yy of year">{{yy}}</option>
+								    	</select>
+
+								    	<span class="col-sm-2 text-center" id="toSpan"> To </span>
+
+								    	<div id="uptoDate" class="row">
+								    	<select class="form-control col-sm-5" id="exampleSelect1" name="toMM" [ngModel]="toMM"
+								    	(ngModelChange)="toMM =$event">
+								      		<option *ngFor="let mm of month ; index as i;" value="{{i}}">{{mm}}</option>
+								    	</select>
+								    	
+								    	<span class="col-sm-2" id="backslash">/</span>
+								    	<select class="form-control col-sm-5" id="exampleSelect2" name="toYY" [ngModel]="toYY"
+								    	(ngModelChange)="toYY =$event">
+								      		<option *ngFor="let yy of year">{{yy}}</option>
+								    	</select>
+								    	</div>
+					        		</div>
+					        	</div>
+						    </div>
+
+						    <div class="form-group row">
+						    	<div class="col-sm-3"></div>
+						    	<div class="col-sm-9">
+						    		<div class="row">
+						    			<label for="currentCheckbox" class="col-sm-3">Currnetly here</label>
+						    			<div class="col-sm-2">
+						    				<input type="checkbox" [checked]="isChecked" class="form-control" name="" id="currentCheckbox" (change)="isChecked = $event.target.checked" (click)="checkBoxEvent()">
+						    			</div>
+						    			
+						    		</div>
+						    	</div>
+						    </div>
+
+						    <div class="form-group row">
+						      <label for="designation" class="col-sm-3 col-form-label">Designation</label>
+						      <div class="col-sm-8">
+						        <input type="text" class="form-control" id="designation" placeholder="designation" name="designation" [ngModel]="designation"
+						        (ngModelChange)="designation =$event">
+						      </div>
+						    </div>
+
+						    <div class="form-group row">
+						      <div (click)="updateAffilition();" class="col-sm-12 text-center"><button class="btn btn-primary">Update</button></div>
+						    </div>
+
+						</form>
+				    </div>
+				  </div>
+				</div>	
+
+
+				</div>
+
+				
+
+				
+				
+				
+				<!-- PAST Affilitations -->
+				<div class="card">
+				  <div class="card-header">
+				    PAST
+				  </div>
+				  <div class="card-body">
+				   	<div class="card" style="width: 20rem;" *ngFor="let affiliation of pastAffiliations">
+					  <div class="card-body">
+					    <h4 class="card-title">{{affiliation.hosName}}</h4>
+					    <h6 class="card-subtitle mb-2 text-muted">{{affiliation.designation}}</h6>
+					    <p class="card-text">{{affiliation.city}}</p>
+					    <p class="card-text">{{affiliation.dateStarted}} - {{affiliation.dateEnd}}</p>
+					  </div>
+					</div>
+				  </div>
+				</div>
+
+			</div>
+
+
+
+			<!-- Pending Affiliations -->
+			<div class="tabs hideTab" id="pendingAffiliation">
+
+				<div class="card">
+				  
+				  <div class="card-body">
+
+
+				   	<div class="card" style="width: 20rem;">
+					  <div class="card-body">
+					    <h4 class="card-title">Institution</h4>
+					    <h6 class="card-subtitle mb-2 text-muted">Destination</h6>
+					    <p class="card-text">city</p>
+					    <p class="card-text">DATE</p>
+
+					    <div class="form-group row">
+				      	<label for="" class="col-sm-4 col-form-label">CTA</label>
+			        	<div class="col-sm-8" id="ctc">
+				        		<select class="form-control">
+				        			<option value="true">ACCEPT</option>
+				        			<option value="false">DECLINE</option>
+				        		</select>
+				        	</div>
+					    </div>
+					  </div>
+					</div>
+
+
+				  </div>
+				</div>
+
+			</div>
+
+
+		</div>	
+
+	</div>
+</div>
+
+</div>
+

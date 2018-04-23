@@ -1,0 +1,50 @@
+<div class="modal-body">
+
+	<div class="row epilen-modal-header">
+		<div class="text-center col-sm-12 col-md-12">
+			<h4 class="w5">Registration Information</h4>
+			<div><span></span>Your data is yours. Your data is protected. Your data is portable</div>
+			<a href="#">Terms & Condition</a>
+		</div>
+		
+	</div>
+
+	<div class="col-sm-12 col-md-12 modal-main-body" *ngIf="registrationInfo!=undefined">
+		<div>
+			<form class="row">
+				
+				<div class="col-md-12">
+					
+					<div>
+						<div class="form-group">
+							<label id="docRegNumLabel" class="w6">Medical Registration number</label>
+							<input type="text" class="form-control w5 epilen-input" id="docRegNum" name="docRegNum" placeholder="the valid registration number" value="" [(ngModel)]="registrationInfo.regNo"/>
+						</div>
+
+						<div class="form-group">
+							<label id="docRegStateLabel" class="w6">State of Registration</label>
+							<input type="text" class="form-control typeahead w5 epilen-input" id="docRegState" name="docRegState" placeholder="state of registration" [(ngModel)]="registrationInfo.regState" [ngbTypeahead]="searchCity" [resultFormatter]="formatter" />
+						</div>
+
+						<div class="form-group">
+							<label id="docRegYearLabel" class="w6">Year of Registration</label>
+							<select id="docRegYear" name="docRegYear" class="form-control w4 epilen-input" 
+							[(ngModel)]="registrationInfo.regYear">
+								<option *ngFor="let yy of years">{{yy}}</option>
+							</select>
+						</div>
+						
+
+						<div class="form-group">
+							<div class="col-md-12 text-center">
+								<button class="btn btn-primary epilen-btn-primary" (click)="updateDoctorRegistrationInfo();">Update</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>

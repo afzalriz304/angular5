@@ -1,0 +1,98 @@
+.epilen-navbar{
+	background-color: #12375C !important;
+	color: #fff !important;	
+	height: 90px !important;
+}
+
+.sidebar{
+	background-color: #12375C;
+    height: 100vh;
+
+}
+
+.left-area{
+	padding: 0px;
+    border-left: 1px solid #2F4F6F;
+}
+
+.navbar-light .navbar-brand{
+	color: #fff !important;
+}
+
+.logo-area{
+	margin-top: 15%;
+}
+
+.epilen-logo{
+	height: 70px;
+}
+
+.horizontal-sidebar li{
+	list-style: none;
+    color: #fff;
+    margin-bottom: 30%;
+}
+
+.horizontal-sidebar{
+    margin-top: 150%;
+    padding-left: 0px;
+}
+
+.search-patient-btn{
+	background: transparent;
+	cursor: pointer;
+}
+
+.search-patient-input{
+	background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    border-radius: none;
+    border-bottom-left-radius: none !important;
+    border-bottom-right-radius: none !important;
+}
+
+.dashboard-svg{
+	height: 50px;
+	margin: 0px 0px 25px 0px;
+}
+
+.navbar-svg{
+	height: 25px;
+}
+
+.sidebar-svg{
+	height: 30px;
+	cursor: pointer;
+}
+
+.epilen-main-body{
+	background-color: #F9F9F9;
+	font-size: 14px
+}
+
+.btn-light{
+	width: 100px !important;
+    font-size: 12px !important;
+	border-radius: 18px !important;
+	border: 1px solid lightgray;
+	cursor: pointer;
+}
+
+
+.doctor-operation{  
+	padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.set-margin{
+	border-right: 1px solid #F2F2F2
+}
+
+.hightlight{
+	background-color: #fff;
+    border-radius: 7px;
+}
+.svg-div{
+	padding: 11px 5px 1px 1px;
+}

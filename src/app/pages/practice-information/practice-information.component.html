@@ -1,0 +1,68 @@
+
+
+<div class="modal-body">
+
+	<div class="row epilen-modal-header">
+		<div class="text-center col-sm-12 col-md-12">
+			<h4 class="w5">Practice Information</h4>
+			<div><span></span>Your data is yours. Your data is protected. Your data is portable</div>
+			<a href="#">Terms & Condition</a>
+		</div>
+		
+	</div>
+
+	<div class="col-sm-12 col-md-12 modal-main-body" *ngIf="practiceInfo!=undefined">
+		<div>
+			<form class="row">
+				
+				<div class="col-md-12">
+					
+					<div>
+						<div class="form-group">
+							<label class="w6">A short professional intro</label>
+							<textarea class="form-control w5" name="docBio" placeholder="write a short professional bio..." [(ngModel)]="practiceInfo.professionalBio"></textarea>
+						</div>
+
+						<div class="form-group">
+							<label id="docSpecialityLabel" class="w6 pracProModalUpdateFormLabel">Primary Specialization</label>
+							<select id="docSpeciality" name="docSpeciality" class="form-control epilen-input" [(ngModel)]="practiceInfo.specialization">
+								<option *ngFor="let item of specialities">{{item.name}}</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label id="docCityLabel" class="w6">City</label>
+							<input type="text" class="typeahead form-control w5 epilen-input" id="docCity" name="docCity" placeholder="select your city" [(ngModel)]="practiceInfo.city" [ngbTypeahead]="searchCity" [resultFormatter]="formatter" />
+						</div>
+
+						<div class="form-group">
+							<label id="docExpLabel" class="w6">Years of practicing experience</label>
+			
+							<select [(ngModel)]="practiceInfo.experience" id="docExp" name="docExp" class="form-control w4 epilen-input">
+								<option *ngFor="let exp of experienceList">{{exp}}</option>
+								
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label id="docLangLabel" class="w6 pracProModalUpdateFormLabel">Languages spoken in practice</label>
+			
+							<input [(ngModel)]="practiceInfo.languages" type="text" class="typeahead form-control w5 epilen-input" id="docLang" name="docLang" placeholder="languages you spoke in practice" 
+							value="" />
+						</div>
+
+						
+
+						<div class="form-group">
+							<div class="col-md-12 text-center">
+								<button class="btn btn-primary epilen-btn-primary" (click)="updateDoctorPracticeInfo();">Update</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>

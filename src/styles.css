@@ -1,0 +1,29 @@
+html, body {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 13px;
+	background-color: #fff;
+}
+
+.epilen-btn-primary{
+	border-radius: 20px !important;
+    width: 28% !important;
+}
+
+.epilen-input {
+	border: none;
+    border-bottom: 1px solid lightgray;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+}
+
+.w6{
+	font-weight: 600;
+}
+
+.w5{
+	font-weight: 500;
+}
+
+.w4{
+	font-weight: 400;
+}

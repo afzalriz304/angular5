@@ -1,0 +1,329 @@
+@charset "utf-8";
+
+/*
+	eGear CSS
+*/
+
+
+/*
+	text prop.
+*/
+
+/* alignment prop. */
+.ta-c{
+	text-align: center;
+}
+
+.ta-r{
+	text-align: right;
+}
+
+.ta-l{
+	text-align: left;
+}
+
+.ta-j{
+	text-align: justify;
+}
+
+.vt-m{
+	vertical-align: middle;
+}
+
+.vt-bm{
+	vertical-align: -webkit-baseline-middle;
+	vertical-align: baseline-middle;
+}
+
+/* transform prop. */
+.txt-tr-uc{
+	text-transform: uppercase;
+}
+
+.txt-tr-lc{
+	text-transform: lowercase;
+}
+
+.txt-tr-c{
+	text-transform: capitalize;
+}
+
+.txt-tr-n{
+	text-transform: none;
+}
+
+/* decoration prop. */
+.txt-decor-none{
+	text-decoration: none !important;
+}
+
+.outln-none{
+	-webkit-outline: none;
+	-moz-outline: none;
+	outline: none;
+	-o-outline: none;
+	-ms-outline: none;
+}
+
+.noselect{
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+   	-moz-user-select: none;
+   	-ms-user-select: none;
+  	user-select: none;
+}
+
+/* position prop. */
+.pos-rel{
+	position: relative;
+}
+
+.pos-abs{
+	position: absolute;
+}
+
+.pos-fix{
+	position: fixed;
+}
+
+.pos-stat{
+	position: static;
+}
+
+.dsp-in-flex{
+	display: inline-flex;
+	display: -webkit-inline-flex;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+}
+
+.flt-rt{
+	float: right;
+}
+
+.flt-lt{
+	float: left;
+}
+
+/* margin prop. */
+.mar-b-null{
+	margin-bottom: 0;
+}
+
+/* padding prop. */
+.pad-t-null{
+	padding-top: 0;
+}
+
+.pad-b-null{
+	padding-bottom: 0;
+}
+
+.pad-r-null{
+	padding-right: 0;
+}
+
+.pad-l-null{
+	padding-left: 0;
+}
+
+/* cursor prop. */
+.cursor-p{
+	cursor: pointer;
+}
+
+.cursor-d{
+	cursor: default;
+}
+
+/*
+	font prop.
+*/
+
+/* font family prop. */
+.font-f-QS{
+	font-family: 'Quicksand';
+}
+
+/* font weight prop. */
+.w3{
+	font-weight: 300;
+}
+
+.w4{
+	font-weight: 400;
+}
+
+.w5{
+	font-weight: 500;
+}
+
+.w6{
+	font-weight: 600;
+}
+
+.w7{
+	font-weight: 700;
+}
+
+/* overflow */
+.of-x-h{
+	overflow-x: hidden !important;
+}
+
+.of-x-a{
+	overflow-x: auto;
+}
+
+.of-x-s{
+	overflow-x: scroll;
+}
+
+.of-y-h{
+	overflow-y: hidden;
+}
+
+.of-y-a{
+	overflow-y: auto;
+}
+
+.of-y-s{
+	overflow-y: scroll;
+}
+
+/*
+	width & height prop.
+*/
+
+.h5{
+	height: 5vh;
+}
+
+.h10{
+	height: 10vh;
+}
+
+.h15{
+	height: 15vh;
+}
+
+.h20{
+	height: 20vh;
+}
+
+.h25{
+	height: 25vh;
+}
+
+.h30{
+	height: 30vh;
+}
+
+.h35{
+	height: 35vh;
+}
+
+.h40{
+	height: 40vh;
+}
+
+.h45{
+	height: 45vh;
+}
+
+.h50{
+	height: 50vh;
+}
+
+.h55{
+	height: 55vh;
+}
+
+.h60{
+	height: 60vh;
+}
+
+.h65{
+	height: 65vh;
+}
+
+.h70{
+	height: 70vh;
+}
+
+.h75{
+	height: 75vh;
+}
+
+.h80{
+	height: 80vh;
+}
+
+.h85{
+	height: 85vh;
+}
+
+.h90{
+	height: 90vh;
+}
+
+.h95{
+	height: 95vh;
+}
+
+.h100{
+	height: 100vh;
+}
+
+/*
+	image prop.
+*/
+
+/* background prop. */
+.cover-bg{
+	-webkit-transition: background-image 0.2s ease-in-out;
+	transition: background-image 0.2s ease-in-out;
+	padding-left: 0;
+	padding-right: 0;
+	background-repeat: no-repeat;
+	background-position: center !important;
+	background-size: cover !important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+}
+
+/* parallax prop. */
+.cover-bg.parallax{
+	background-attachment: fixed !important;
+}
+
+.bg-parallax{
+	background-attachment: fixed !important;
+}
+
+/* background opacity layer prop. */
+.cover-layer{
+	background-repeat: repeat-x;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-position: center center;
+	background-size: cover;
+	display: block;
+}
+
+/*
+	custom css
+*/
+
+/* apply font to all p and a tag */
+p, a, label, input, select, small, ul, li{
+	font-family: 'Quicksand';
+}
+
+p{
+	margin-bottom: 0;
+}

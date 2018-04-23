@@ -1,0 +1,654 @@
+<!-- <div id="mgrBody" class="pageScroll of-x-h"  *ngIf="Doctor!=undefined">
+
+<pre>{{closeResult}}</pre>
+	
+   <div id="mgrCon" class="container-fluid">
+    	
+    	<div id="mgrRo" class="row">
+        	
+			<div id="mgrNavCo" class="col-lg-1">
+        		
+        		<img class="mgrNavLogo pos-rel" src="./assets/images/logo/logoPlain.png" />
+        		
+        		<div id="mgrNavMenu" class="ta-c">
+        		
+        			<div item="practiceProfile">
+						<span class="doctor-practiceProfile pos-rel"></span>
+					</div>
+       		
+       				<div item="patient">
+						<span class="doctor-patient pos-rel"></span>
+					</div>
+       		
+       				<div item="calendar">
+						<span class="doctor-calendar pos-rel"></span>
+					</div>
+       		
+       				<div item="setting">
+						<span class="doctor-setting pos-rel"></span>
+					</div>
+        			
+        			<div item="logout">
+						<span class="doctor-logout pos-rel"></span>
+					</div>
+        			
+				</div>
+        		
+			</div>
+       	
+       		<div id="mgrCo" class="col-lg-11">
+        		
+        		<div id="mgrMenuRo" class="row">
+        			
+        			<div id="mgrMenuCo" class="col-lg-12">
+        				
+        				<div class="row">
+        				
+        					<div class="col-lg-5">
+        						
+        						<div id="mgrMenuTitle">
+        							
+        							<p type="title" class="w3">
+        								Dr. {{Doctor.name}}
+									</p>
+        							
+        							<p type="txt" class="w4">
+        								Practice Profile
+									</p>
+        							
+								</div>
+        						
+							</div>
+       				
+       						<div class="col-lg-7">
+       							
+       							<div id="mgrMenuItem">
+       								
+       								<div id="mgrMenuItemView" class="flt-rt dsp-in-flex">
+       									
+       									<div item="addPatient">
+											<span class="doctor-addPatient pos-rel"></span>
+										</div>
+      									
+      									<div item="inMail">
+											<span class="doctor-inMail pos-rel"></span>
+										</div>
+      									
+      									<div item="searchPatient" id="searchPatientInput">
+				
+											<input type="text" class="form-control w5 authFormInput" autocomplete="off" itype="text" iname="Query" irequire="true" id="searchPatient" name="searchPatient" placeholder="Search patients">
+					
+											<span type="icon" class="doctor-search inlineIcon pos-rel flt-rt cursor-p"></span>
+											
+										</div>
+       									
+									</div>
+       								
+								</div>
+       							
+							</div>
+        				
+						</div>
+        				
+					</div>
+        			
+				</div>
+        		
+        		<div id="mgrPanelRo" class="row">
+        			
+        			<div id="mgrPanelCo" class="col-lg-12">
+        				
+        				<div id="pracProView">
+
+							<div id="pracProViewRo" class="row">
+								
+								<div id="pracProCo" class="col-lg-4">
+									
+									<div id="pracProUpdate" class="ta-c">
+										
+										<img type="imgIcon" src="./assets/images/doctor/practice/profile/personal.svg" />
+										
+										<div id="pracProUpdateContent">
+										
+											<p type="title" class="w6">
+												Personal Information
+											</p>
+											
+											<p type="note" class="w4">
+												Update your personal information like your profile photo, gender and date of birth.
+											</p>
+											
+											<a id="pracProPerCTA" (click)="open('PersonalInformationComponent')" name="personal" type="btn" class="defaultRBtn pracProUpdateCTA pos-rel w6 txt-decor-none cursor-p txt-tr-uc noselect">
+												Update
+											</a>
+										
+										</div>
+										
+									</div>
+									
+								</div>
+				
+								<div id="pracProCo" class="col-lg-4" style="border-left: 1px solid #eee;">
+									
+									<div id="pracProUpdate" class="ta-c">
+										
+										<img type="imgIcon" src="./assets/images/doctor/practice/profile/professional.svg" />
+										
+										<div id="pracProUpdateContent">
+										
+											<p type="title" class="w6">
+												Practice Timing
+											</p>
+											
+											<p type="note" class="w4">
+												Update your professional information like bio and specialization.
+											</p>
+											
+											<a id="pracProProCTA"  (click)="open('PracticeTimingComponent')" name="professional" type="btn" class="defaultRBtn pracProUpdateCTA pos-rel w6 txt-decor-none cursor-p txt-tr-uc noselect">
+												Update
+											</a>
+										
+										</div>
+										
+									</div>
+									
+								</div>
+		
+								<div id="pracProCo" class="col-lg-4" style="border-left: 1px solid #eee;">
+									
+									<div id="pracProUpdate" class="ta-c">
+										
+										<img type="imgIcon" src="./assets/images/doctor/practice/profile/practice.svg" />
+										
+										<div id="pracProUpdateContent">
+										
+											<p type="title" class="w6">
+												Practice Information
+											</p>
+											
+											<p type="note" class="w4">
+												Update your practice information such as Focus areas, experience and languages.
+											</p>
+											
+											<a id="pracProPracCTA" (click)="open('PracticeInformationComponent')" name="practice" type="btn" class="defaultRBtn pracProUpdateCTA pos-rel w6 txt-decor-none cursor-p txt-tr-uc noselect">
+												Update
+											</a>
+										
+										</div>
+										
+									</div>
+									
+								</div>
+		
+							</div>
+	
+							<div id="pracProViewRo" class="row" style="margin-top: 14vh;">
+								
+								<div id="pracProCo" class="col-lg-4">
+								
+								<div id="pracProUpdate" class="ta-c">
+									
+									<img type="imgIcon" src="./assets/images/doctor/practice/profile/registration.svg" />
+									
+									<div id="pracProUpdateContent">
+									
+										<p type="title" class="w6">
+											Registration Information
+										</p>
+										
+										<p type="note" class="w4">
+											Update your Registration Information like registration number.
+										</p>
+										
+										<a id="pracProRegCTA" (click)="open('RegistrationInformationComponent')" name="registration" type="btn" class="defaultRBtn pracProUpdateCTA pos-rel w6 txt-decor-none cursor-p txt-tr-uc noselect">
+											Update
+										</a>
+									
+									</div>
+									
+								</div>
+								
+							</div>	
+								
+								<div id="pracProCo" class="col-lg-4" style="border-left: 1px solid #eee;">
+								
+								<div id="pracProUpdate" class="ta-c">
+									
+									<img type="imgIcon" src="./assets/images/doctor/practice/profile/affiliation.svg" />
+									
+									<div id="pracProUpdateContent">
+									
+										<p type="title" class="w6">
+											Affiliations
+										</p>
+										
+										<p type="note" class="w4">
+											Update your affiliations and information on practice places.
+										</p>
+										
+										<a id="pracProAffCTA" (click)="open('AffiliationsComponent')" name="affiliation" type="btn" class="defaultRBtn pracProUpdateCTA pos-rel w6 txt-decor-none cursor-p txt-tr-uc noselect">
+											Update
+										</a>
+									
+									</div>
+									
+								</div>
+								
+							</div>	
+								
+								<div id="pracProCo" class="col-lg-4" style="border-left: 1px solid #eee;">
+								
+								<div id="pracProUpdate" class="ta-c">
+									
+									<img type="imgIcon" src="./assets/images/doctor/practice/profile/education.svg" />
+									
+									<div id="pracProUpdateContent">
+									
+										<p type="title" class="w6">
+											Education &amp; Training
+										</p>
+										
+										<p type="note" class="w4">
+											Update information about your education and medical trainings.
+										</p>
+										
+										<a id="pracProEduCTA" (click)="open('EducationAndTrainingComponent')" name="education" type="btn" class="defaultRBtn pracProUpdateCTA pos-rel w6 txt-decor-none cursor-p txt-tr-uc noselect">
+											Update
+										</a>
+									
+									</div>
+									
+								</div>
+								
+							</div>	
+								
+							</div>
+
+						</div>
+        				
+					</div>
+        			
+				</div>
+        		
+			</div>
+        	
+   		</div>
+    	
+    </div>
+    
+   
+</div>
+ -->
+
+<app-loader *ngIf="loading"></app-loader>
+ 
+<div class="container-fluid" *ngIf="Doctor!=undefined">
+
+  <div class="row">
+    <div class="col-md-1 sidebar text-center">
+      <div class="logo-area">
+        <img class="epilen-logo" id="epilen-logo" src="./assets/images/logo/logoPlain.png" />
+      </div>
+
+      <div class="text-center">
+        <ul class="horizontal-sidebar">
+          <li>
+            <div class="svg-div hightlight activeIcon">
+              <svg class="sidebar-svg" id="addPatinet" [@myAwesomeAnimation]='addPatientAnimate.state'  #addPatinet (mouseenter)="mouseEnter(addPatinet);animateMe(addPatinet,addPatientAnimate);" (mouseleave)="mouseLeave(addPatinet);animateMe(addPatinet,addPatientAnimate);" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve" fill="#12375C">
+              <g>
+                <g>
+                  <path d="M46.966,23.345c0-3.814-3.115-6.92-6.931-6.92s-6.933,3.105-6.933,6.92c0,3.435,2.496,6.267,5.769,6.813v7.267
+                    c0,5.664-4.597,10.261-10.261,10.261c-5.664,0-10.262-4.598-10.262-10.261L18.323,29.1c2.686-0.358,5.311-1.929,7.646-4.612
+                    c0.343-0.394,0.447-0.902,0.388-1.387c3.052-4.035,4.945-9.53,4.945-13.754c0-6.521-2.922-7.198-7.754-8.304l-0.007-0.012
+                    C23.244,0.433,22.644,0,21.917,0c-1.021,0-1.849,0.827-1.849,1.836c0,1.021,0.827,1.848,1.849,1.848
+                    c0.404,0,0.783-0.168,1.084-0.407l0.043,0.016c4.691,1.077,5.957,1.369,5.957,6.054c0,3.715-1.758,8.69-4.445,12.282
+                    c-0.445,0.026-0.885,0.222-1.214,0.588c-1.373,1.589-3.567,3.491-6.159,3.491c-2.59,0-4.782-1.884-6.155-3.469
+                    c-0.33-0.366-0.769-0.562-1.211-0.587c-2.694-3.605-4.456-8.586-4.456-12.306c0-4.688,1.245-4.979,5.965-6.056l0.016-0.015
+                    c0.324,0.239,0.677,0.408,1.107,0.408c1.021,0,1.848-0.828,1.848-1.848C14.296,0.827,13.47,0,12.448,0
+                    c-0.729,0-1.328,0.433-1.646,1.029L10.798,1.03C5.961,2.146,3.034,2.811,3.034,9.347c0,4.228,1.9,9.743,4.979,13.777
+                    c-0.059,0.485,0.046,0.994,0.389,1.387c2.333,2.665,4.933,4.23,7.616,4.589l0.003,8.324C16.022,44.359,21.676,50,28.61,50
+                    c6.934,0,12.564-5.641,12.564-12.576v-7.267C44.446,29.611,46.966,26.779,46.966,23.345z M40.035,27.975
+                    c-2.543,0-4.63-2.074-4.63-4.628c0-2.544,2.087-4.617,4.63-4.617s4.606,2.073,4.606,4.617
+                    C44.642,25.9,42.578,27.975,40.035,27.975z"/>
+                  <path d="M40.035,19.891c-1.91,0-3.466,1.545-3.466,3.455c0,1.921,1.556,3.464,3.466,3.464c1.909,0,3.466-1.543,3.466-3.464
+                    C43.501,21.436,41.944,19.891,40.035,19.891z"/>
+                </g>
+              </g>
+              </svg>
+            </div>
+          </li>
+          <li>
+            <div class="svg-div">
+              <svg class="sidebar-svg" id="" [@myAwesomeAnimation]='patientAnimate.state'  #patientSvg (mouseenter)="mouseEnter(patientSvg);animateMe(patientSvg,patientAnimate);" (mouseleave)="mouseLeave(patientSvg);animateMe(patientSvg,patientAnimate);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 34 42.5" style="enable-background:new 0 0 34 34;" xml:space="preserve"><path d="M17,15.5c4,0,7.2-3.3,7.2-7.2S21,1,17,1S9.8,4.3,9.8,8.2S13,15.5,17,15.5z M17,3c2.9,0,5.2,2.4,5.2,5.2s-2.4,5.2-5.2,5.2  s-5.2-2.4-5.2-5.2S14.1,3,17,3z M17,16C9.6,16,3.5,23.2,3.5,32v1h27v-1C30.5,23.2,24.4,16,17,16z M5.5,31C6,23.7,10.9,18,17,18  s11,5.7,11.5,13H5.5z M23,23.5h1.5v2H23V27h-2v-1.5h-1.5v-2H21V22h2V23.5z" fill="#ffffff"/></svg>
+            </div>
+          </li>
+          <li>
+            <div class="svg-div">
+              <svg class="sidebar-svg" id="" [@myAwesomeAnimation]='calenderAnimate.state'  #calender (mouseenter)="mouseEnter(calender);animateMe(calender,calenderAnimate);" (mouseleave)="mouseLeave(calender);animateMe(calender,calenderAnimate);" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="#ffffff">
+              <g id="Calendar">
+                <path d="M60.0002518,6.0037999h-15V1c0-0.5527-0.4472008-1-1-1c-0.5527,0-1,0.4473-1,1v5.0037999H22.0002499V1
+                  c0-0.5527-0.4472008-1-1-1c-0.5527,0-1,0.4473-1,1v5.0037999H3.9997499c-2.2090998,0-4,1.7908001-4,4.0000005V60
+                  c0,2.2090988,1.7909,4,4,4h56.0005035c2.209198,0,4-1.7909012,4-4V10.0038004
+                  C64.0002518,7.7946,62.2094498,6.0037999,60.0002518,6.0037999z M3.9997499,8.0038004h16.0004997V11c0,0.5527,0.4473,1,1,1
+                  c0.5527992,0,1-0.4473,1-1V8.0038004h21.0000019V11c0,0.5527,0.4473,1,1,1c0.5527992,0,1-0.4473,1-1V8.0038004h15
+                  c1.1027985,0,2,0.8970995,2,2V17h-60L1.99975,17.0000992v-6.9962988C1.99975,8.9008999,2.8970499,8.0038004,3.9997499,8.0038004z
+                   M62.0002518,60c0,1.1027985-0.8972015,2-2,2H3.9997499c-1.1027,0-1.9999999-0.8972015-1.9999999-2V18.9999008L2.0002501,19h60V60z
+                  "/>
+                <path d="M18.0002499,24h-8v8h8V24z M16.0002499,30h-4v-4h4V30z"/>
+                <path d="M36.0002518,24h-8.0000019v8h8.0000019V24z M34.0002518,30h-4.0000019v-4h4.0000019V30z"/>
+                <path d="M54.0002518,24h-8v8h8V24z M52.0002518,30h-4v-4h4V30z"/>
+                <path d="M18.0002499,36h-8v8h8V36z M16.0002499,42h-4v-4h4V42z"/>
+                <path d="M36.0002518,36h-8.0000019v8h8.0000019V36z M34.0002518,42h-4.0000019v-4h4.0000019V42z"/>
+                <path d="M18.0002499,48h-8v8h8V48z M16.0002499,54h-4v-4h4V54z"/>
+                <path d="M36.0002518,48h-8.0000019v8h8.0000019V48z M34.0002518,54h-4.0000019v-4h4.0000019V54z"/>
+                <path d="M54.0002518,36h-8v8h8V36z M52.0002518,42h-4v-4h4V42z"/>
+                <path d="M54.0002518,48h-8v8h8V48z M52.0002518,54h-4v-4h4V54z"/>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              </svg>
+
+            </div>
+          </li>
+          <li>
+            <div class="svg-div">
+              <svg class="sidebar-svg" id="" [@myAwesomeAnimation]='settingsAnimate.state' #settings (mouseenter)="mouseEnter(settings);animateMe(settings,settingsAnimate);" (mouseleave)="mouseLeave(settings);animateMe(settings,settingsAnimate);" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 478.703 478.703" style="enable-background:new 0 0 478.703 478.703;" xml:space="preserve" fill="#ffffff">
+              <g>
+                <g>
+                  <path d="M454.2,189.101l-33.6-5.7c-3.5-11.3-8-22.2-13.5-32.6l19.8-27.7c8.4-11.8,7.1-27.9-3.2-38.1l-29.8-29.8
+                    c-5.6-5.6-13-8.7-20.9-8.7c-6.2,0-12.1,1.9-17.1,5.5l-27.8,19.8c-10.8-5.7-22.1-10.4-33.8-13.9l-5.6-33.2
+                    c-2.4-14.3-14.7-24.7-29.2-24.7h-42.1c-14.5,0-26.8,10.4-29.2,24.7l-5.8,34c-11.2,3.5-22.1,8.1-32.5,13.7l-27.5-19.8
+                    c-5-3.6-11-5.5-17.2-5.5c-7.9,0-15.4,3.1-20.9,8.7l-29.9,29.8c-10.2,10.2-11.6,26.3-3.2,38.1l20,28.1
+                    c-5.5,10.5-9.9,21.4-13.3,32.7l-33.2,5.6c-14.3,2.4-24.7,14.7-24.7,29.2v42.1c0,14.5,10.4,26.8,24.7,29.2l34,5.8
+                    c3.5,11.2,8.1,22.1,13.7,32.5l-19.7,27.4c-8.4,11.8-7.1,27.9,3.2,38.1l29.8,29.8c5.6,5.6,13,8.7,20.9,8.7c6.2,0,12.1-1.9,17.1-5.5
+                    l28.1-20c10.1,5.3,20.7,9.6,31.6,13l5.6,33.6c2.4,14.3,14.7,24.7,29.2,24.7h42.2c14.5,0,26.8-10.4,29.2-24.7l5.7-33.6
+                    c11.3-3.5,22.2-8,32.6-13.5l27.7,19.8c5,3.6,11,5.5,17.2,5.5l0,0c7.9,0,15.3-3.1,20.9-8.7l29.8-29.8c10.2-10.2,11.6-26.3,3.2-38.1
+                    l-19.8-27.8c5.5-10.5,10.1-21.4,13.5-32.6l33.6-5.6c14.3-2.4,24.7-14.7,24.7-29.2v-42.1
+                    C478.9,203.801,468.5,191.501,454.2,189.101z M451.9,260.401c0,1.3-0.9,2.4-2.2,2.6l-42,7c-5.3,0.9-9.5,4.8-10.8,9.9
+                    c-3.8,14.7-9.6,28.8-17.4,41.9c-2.7,4.6-2.5,10.3,0.6,14.7l24.7,34.8c0.7,1,0.6,2.5-0.3,3.4l-29.8,29.8c-0.7,0.7-1.4,0.8-1.9,0.8
+                    c-0.6,0-1.1-0.2-1.5-0.5l-34.7-24.7c-4.3-3.1-10.1-3.3-14.7-0.6c-13.1,7.8-27.2,13.6-41.9,17.4c-5.2,1.3-9.1,5.6-9.9,10.8l-7.1,42
+                    c-0.2,1.3-1.3,2.2-2.6,2.2h-42.1c-1.3,0-2.4-0.9-2.6-2.2l-7-42c-0.9-5.3-4.8-9.5-9.9-10.8c-14.3-3.7-28.1-9.4-41-16.8
+                    c-2.1-1.2-4.5-1.8-6.8-1.8c-2.7,0-5.5,0.8-7.8,2.5l-35,24.9c-0.5,0.3-1,0.5-1.5,0.5c-0.4,0-1.2-0.1-1.9-0.8l-29.8-29.8
+                    c-0.9-0.9-1-2.3-0.3-3.4l24.6-34.5c3.1-4.4,3.3-10.2,0.6-14.8c-7.8-13-13.8-27.1-17.6-41.8c-1.4-5.1-5.6-9-10.8-9.9l-42.3-7.2
+                    c-1.3-0.2-2.2-1.3-2.2-2.6v-42.1c0-1.3,0.9-2.4,2.2-2.6l41.7-7c5.3-0.9,9.6-4.8,10.9-10c3.7-14.7,9.4-28.9,17.1-42
+                    c2.7-4.6,2.4-10.3-0.7-14.6l-24.9-35c-0.7-1-0.6-2.5,0.3-3.4l29.8-29.8c0.7-0.7,1.4-0.8,1.9-0.8c0.6,0,1.1,0.2,1.5,0.5l34.5,24.6
+                    c4.4,3.1,10.2,3.3,14.8,0.6c13-7.8,27.1-13.8,41.8-17.6c5.1-1.4,9-5.6,9.9-10.8l7.2-42.3c0.2-1.3,1.3-2.2,2.6-2.2h42.1
+                    c1.3,0,2.4,0.9,2.6,2.2l7,41.7c0.9,5.3,4.8,9.6,10,10.9c15.1,3.8,29.5,9.7,42.9,17.6c4.6,2.7,10.3,2.5,14.7-0.6l34.5-24.8
+                    c0.5-0.3,1-0.5,1.5-0.5c0.4,0,1.2,0.1,1.9,0.8l29.8,29.8c0.9,0.9,1,2.3,0.3,3.4l-24.7,34.7c-3.1,4.3-3.3,10.1-0.6,14.7
+                    c7.8,13.1,13.6,27.2,17.4,41.9c1.3,5.2,5.6,9.1,10.8,9.9l42,7.1c1.3,0.2,2.2,1.3,2.2,2.6v42.1H451.9z"/>
+                  <path d="M239.4,136.001c-57,0-103.3,46.3-103.3,103.3s46.3,103.3,103.3,103.3s103.3-46.3,103.3-103.3S296.4,136.001,239.4,136.001
+                    z M239.4,315.601c-42.1,0-76.3-34.2-76.3-76.3s34.2-76.3,76.3-76.3s76.3,34.2,76.3,76.3S281.5,315.601,239.4,315.601z"/>
+                </g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              </svg>
+
+            </div>
+          </li>
+          <li>
+            <div class="svg-div">
+              <svg class="sidebar-svg" id="" [@myAwesomeAnimation]='logoutAnimate.state'  #logout (mouseenter)="mouseEnter(logout);animateMe(logout,logoutAnimate);" (mouseleave)="mouseLeave(logout);animateMe(logout,logoutAnimate);"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve" fill="#ffffff"><style type="text/css">
+              .st0{}
+            </style><g><g><path class="st0" d="M21.6,7.9L21.6,7.9c0,0.2,0.1,0.4,0.3,0.5c2.8,2,4.5,5.5,4.1,9.3c-0.5,4.7-4.3,8.4-8.9,9    C11,27.4,5.8,22.6,5.8,16.6c0-3.4,1.7-6.4,4.2-8.2c0.2-0.1,0.3-0.3,0.3-0.5v0c0-0.6-0.6-0.9-1.1-0.5c-3.2,2.3-5.1,6.2-4.7,10.4    c0.5,5.4,4.8,9.7,10.1,10.3c6.9,0.8,12.8-4.7,12.8-11.4c0-3.8-1.9-7.2-4.7-9.3C22.3,7,21.6,7.3,21.6,7.9z"></path></g><path class="st0" d="M16,13.2L16,13.2c-0.4,0-0.8-0.3-0.8-0.8V4.3c0-0.4,0.3-0.8,0.8-0.8h0c0.4,0,0.8,0.3,0.8,0.8   v8.2C16.7,12.9,16.4,13.2,16,13.2z"></path></g></svg>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-11 left-area">
+
+      <!-- navbar stars -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light epilen-navbar">
+        <a class="navbar-brand" href="#">Dr. {{Doctor.name}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img class="navbar-svg" src="./assets/images/svg/doctor/inMail.svg"/>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img class="navbar-svg" src="./assets/images/svg/doctor/addPatient.svg"/>
+              </a>
+            </li>
+            
+          </ul>
+
+
+          <form class="form-inline my-2 my-lg-0">
+            <input class="mr-sm-2 search-patient-input" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn my-2 my-sm-0 search-patient-btn" type="submit"><img  class="navbar-svg" src="./assets/images/svg/doctor/search.svg"/></button>
+          </form>
+        </div>
+      </nav>
+      <!-- navbar ends -->
+
+      <div class="container-fluid epilen-main-body">
+        
+        <div class="row">
+
+          <div class="col-md-4 text-center doctor-operation">
+            <div class="set-margin">
+              
+              <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/personal.svg" />
+              
+              <div>
+              
+                <p type="title" class="w6">
+                  Personal Information
+                </p>
+                
+                <p type="note" class="w4">
+                  Update your personal information like your profile<br> photo, gender and date of birth.
+                </p>
+                
+                <a id="pracProPerCTA" (click)="open('PersonalInformationComponent')" name="personal" type="btn" class="btn btn-light  epilen-btn">
+                  Update
+                </a>
+              
+              </div>
+              
+            </div>
+          </div>
+
+
+          <div class="col-md-4 text-center doctor-operation">
+            <div class="set-margin">
+              
+              <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/practice.svg" />
+              
+              <div>
+              
+                <p type="title" class="w6">
+                  Practice Information
+                </p>
+                
+                <p type="note" class="w4">
+                  Update your practice information such as Focus<br> areas, experience and languages.
+                </p>
+                
+                <a id="pracProPracCTA" (click)="open('PracticeInformationComponent')" name="practice" type="btn" class="btn btn-light  epilen-btn">
+                  Update
+                </a>
+              
+              </div>
+              
+            </div>
+          </div>
+
+
+          <div class="col-md-4 text-center doctor-operation">
+            <div>
+              
+              <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/registration.svg" />
+              
+              <div>
+              
+                <p type="title" class="w6">
+                  Registration Information
+                </p>
+                
+               <p type="note" class="w4">
+                  Update your Registration Information like<br> registration number.
+                </p>
+                
+                <a id="" (click)="open('RegistrationInformationComponent')" name="registration" type="btn" class="btn  btn-light  epilen-btn">
+                  Update
+                </a>
+              
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="col-md-4 text-center doctor-operation">
+            <div class="set-margin">
+              
+              <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/professional.svg" />
+              
+              <div>
+              
+                <p type="title" class="w6">
+                  Practice Timing
+                </p>
+                
+                <p type="note" class="w4">
+                  Update your professional information like bio and<br> specialization.
+                </p>
+                
+                <a id="pracProProCTA"  (click)="open('PracticeTimingComponent')" name="professional" type="btn" class="btn  btn-light  epilen-btn">
+                  Update
+                </a>
+              
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="col-md-4 text-center doctor-operation">
+            <div class="set-margin">
+              
+              <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/affiliation.svg" />
+              
+              <div>
+              
+                <p type="title" class="w6">
+                  Affiliations
+                </p>
+                
+                <p type="note" class="w4">
+                  Update your affiliations and information on<br> practice places.
+                </p>
+                
+                <a id="pracProAffCTA" (click)="open('AffiliationsComponent')" name="affiliation" type="btn" class="btn  btn-light  epilen-btn">
+                  Update
+                </a>
+              
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="col-md-4 text-center doctor-operation">
+            <div>
+              
+                    
+              <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/education.svg" />
+              
+              <div>
+              
+                <p type="title" class="w6">
+                  Education &amp; Training
+                </p>
+                
+                <p type="note" class="w4">
+                  Update information about your education and<br> medical trainings.
+                </p>
+                
+                <a id="pracProEduCTA" (click)="open('EducationAndTrainingComponent')" name="education" type="btn" class="btn  btn-light  epilen-btn">
+                  Update
+                </a>
+                  
+              
+              </div>
+              
+            </div>
+          </div>
+
+          
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+</div>
