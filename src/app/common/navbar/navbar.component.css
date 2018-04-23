@@ -1,22 +1,6 @@
-nav
-{
-    padding-right: 30px !important;
-    padding-left: 30px !important;
-	font-size: 24px;
-	color: #fff;
-	height: 58px;
-    border-radius: 0;
-    background: linear-gradient(to right top,#4589A3,#203D5B);
-    margin-bottom: 0px; 
+.epilen-navbar-login{
+	background-color: #fff !important;
+    color: gray !important;
+    border-radius: 20px !important;
+    border: 1px solid lightgray !important;
 }
-
-.btn-sign-up
-{
-	border-radius: 21px !important;
-    background-color: transparent !important;
-    border: 1px solid #fff !important;
-    color: #fff !important;
-    height: 34px !important;
-    width: 130px !important;
-}
-

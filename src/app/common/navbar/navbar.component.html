@@ -1,8 +1,10 @@
 
-<nav class="navbar justify-content-between">
-  <a class="navbar-brand"><img src="../assets/images/logo/epilen-new-logo.png"></a>
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand"></a>
   <form class="form-inline">
-    
-    <button [routerLink]="['/login']" class="btn btn-info my-2 my-sm-0 epilen-navbar-login btn-sign-up" type="submit">Sign up</button>
+    <div class="mr-sm-2">
+    	Already have an Epilen account?
+    </div>
+    <button [routerLink]="['/login']" class="btn btn-info my-2 my-sm-0 epilen-navbar-login" type="submit">Sign In</button>
   </form>
 </nav>
