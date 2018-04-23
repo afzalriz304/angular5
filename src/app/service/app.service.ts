@@ -106,7 +106,7 @@ export class AppService {
   }
 
   updateDoctorAffiliation(id,data){
-    let url  =  API_URL + 'doctor/' +id+ '/add/affiliation';
+    let url  =  API_URL + 'doctor/' +id+ '/update/affiliations';
     return this.http.post(url,data,{withCredentials:true}).map(this.successResponse).catch(this.errorHandler); 
   }
 

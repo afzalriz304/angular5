@@ -57,12 +57,14 @@ export class AffiliationsComponent implements OnInit {
 
     //get Affiliation Data
     this.appService.getDoctorAffiliationInfo(this.id).subscribe(data=>{
+
       this.affiliationData  =  JSON.parse(data._body);
       this.affiliation      =  this.affiliationData.data;
-      
+      console.log("-----------",this.affiliation);
+      this.settingAffiliation(this.affiliation);
       this.hospital  =  this.affiliation.hospitals;
       this.affilitionsList =  this.affiliation.affiliationData
-      this.settingAffiliation(this.affilitionsList);
+      
       
     },error=>{
 
@@ -138,14 +140,14 @@ export class AffiliationsComponent implements OnInit {
         : this.cities.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10));
 
 
-  searchHospital = (text$: Observable<string>) =>
+  /*searchHospital = (text$: Observable<string>) =>
     text$
       .debounceTime(200)
       .distinctUntilChanged()
       .map(term => term === '' ? []
         : this.hospital.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10));
 
-
+*/
 
 
 
@@ -182,6 +184,7 @@ export class AffiliationsComponent implements OnInit {
       "dateStarted":this.fromMM+"/"+this.fromYY,
       "dateEnd":this.isChecked ? "till Present" :this.toMM +"/"+ this.toYY,
       "designation":this.designation
+
     }
     
     this.appService.updateDoctorAffiliation(this.id,body).subscribe(data=>{
