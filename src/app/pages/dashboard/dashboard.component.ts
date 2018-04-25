@@ -105,6 +105,31 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  menuToggle(response){
+    console.log("response-----------",response);
+    var boxsize=$(".sidenav").width();
+    if(!response){
+      $(".sidenav").animate({
+        width:0
+      },function(){
+        $(".list").hide()
+        $(".side-navbar").animate({
+          width:100
+        })
+      })
+    }
+    else{
+      $(".sidenav").animate({
+        width: 193
+      },function(){
+        $(".side-navbar").animate({
+          width:200
+        })
+      })
+      $(".list").show(1000)
+    }
+  }
+
 
   open(requestPage) {
 

@@ -24,6 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoaderComponent } from './common/loader/loader.component';
 import { AuthGuard } from './authentication/AuthGuard';
 import { UserService } from './authentication/userService';
+import { DoctorNavbarComponent } from './common/doctor-navbar/doctor-navbar.component';
+import { SideNavComponent } from './common/side-nav/side-nav.component';
 
 
 
@@ -44,7 +46,9 @@ import { UserService } from './authentication/userService';
     EducationAndTrainingComponent,
     PracticeTimingComponent,
     AddSlotTemplateComponent,
-    LoaderComponent
+    LoaderComponent,
+    DoctorNavbarComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,

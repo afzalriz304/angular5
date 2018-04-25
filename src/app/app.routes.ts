@@ -38,8 +38,8 @@ export const AppRoutes=[
   {
     path: "dashboard",
     component: DashboardComponent,
-    data: { requiresLogin: true },
-    canActivate: [AuthGuard],
+    // data: { requiresLogin: true },
+    // canActivate: [AuthGuard],
     children:[
       {
         path:"professional",

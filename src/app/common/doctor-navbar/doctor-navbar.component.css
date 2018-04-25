@@ -1,0 +1,39 @@
+nav
+{
+    padding-right: 30px !important;
+    padding-left: 30px !important;
+	font-size: 24px;
+	color: #fff;
+	height: 50px;
+    border-radius: 0;
+    background: linear-gradient(to right,#203D5B,#4589A3);
+    margin-bottom: 0px; 
+}
+
+.navbar-light .navbar-brand{
+	color: #fff !important;
+}
+
+.btn-sign-up
+{
+	border-radius: 21px !important;
+    background-color: transparent !important;
+    border: 1px solid #c6c6c6 !important;
+    height: 32px !important;
+    width: 160px !important;
+    color: #c6c6c6 !important;
+    font-size: 11px;
+}
+
+.navbar label{
+    font-size: 20px;
+    margin-right: 14px;
+}
+
+.logo-area{
+	margin-top: 15%;
+}
+
+.epilen-logo{
+	height: 40px;
+}
