@@ -11,7 +11,7 @@
               Availability
         </div>
     </div>
-    <div class="card-body">
+    <div class="card-body" *ngIf="doctorAvailablity!=undefined">
         
                 Date of Availability -  
         <div class="start" *ngIf="s">
@@ -21,9 +21,12 @@
                     End Date - {{e}}
             </p> 
         </div>
-        <div *ngIf="firstSlot">Slots -
-            From - {{firstSlot.from}}  To - {{firstSlot.to}}
+        <div  *ngFor="let slots of slot">Slots -
+            From - {{slots.slots}}  To - {{slots.slots}}
 
+        </div>
+        <div *ngFor="let doc of doctor">
+            {{doc}}
         </div>
     </div>
 </div>

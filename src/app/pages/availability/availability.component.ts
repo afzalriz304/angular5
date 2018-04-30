@@ -11,8 +11,11 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class AvailabilityComponent implements OnInit {
 
+    doctor: any;
+    slots: any[];
+    doctorAvailablity: any;
     firstSlot: { 'from': string; 'to': string; };
-    slots: { 'date': number; 'slots': { 'from': string; 'to': string; }[]; };
+    // slots: { 'date': number; 'slots': { 'from': string; 'to': string; }[]; };
     e: string;
     end: Date;
     s: string;
@@ -24,6 +27,7 @@ export class AvailabilityComponent implements OnInit {
 
 private myForm: FormGroup;
 private start: Date;
+response: any;
 constructor(private formBuilder: FormBuilder) { }
 
 
@@ -74,6 +78,10 @@ ngOnInit() {
                     'slots': [
                         {
                             'from': '04:30:pm',
+                            'to': '06:00:pm'
+                        },
+                        {
+                            'from': '06:30:pm',
                             'to': '09:00:pm'
                         }
                     ]
@@ -94,21 +102,34 @@ ngOnInit() {
             }
         }
     };
-
-    this.start = new Date(data.data.dateRange.startDate);
-    this.end = new Date(data.data.dateRange.endDate);
+    this.response = data.data;
+    this.start = new Date(this.response.dateRange.startDate);
+    this.end = new Date(this.response.dateRange.endDate);
     this.s = this.start.toDateString();
     this.e = this.end.toDateString();
-    const len = data.data.doctorAvailability;
+    const len = this.response.doctorAvailability;
+    this.doctorAvailablity     =    this.response.doctorAvailability;
+    this.available(this.doctorAvailablity);
+    console.log('response', this.response);
     console.log('length', len.length);
     for (let i = 0; i < len.length; i++) {
-        this.slots = data.data.doctorAvailability[i];
+
+        // this.slots.push(this.response.doctorAvailability[i]);
+        // this.slots = { 'date': data.data.doctorAvailability[i].date ,
+        //                  'slots': { 'from': data.data.doctorAvailability[i].slots[i].from ,
+        //                      'to': data.data.doctorAvailability[i].slots[i].to; }[]; };
+        console.log('Slots array', this.slots);
     }
-    
-    this.firstSlot = this.slots.slots[0];
-    console.log('Slot 1', this.slots);
+
+    console.log('Slots', this.slots);
     console.log('Start date', data);
 
+}
+
+available(doc) {
+    console.log('all available slots', doc);
+
+    this.doctor = doc;
 }
 
 setDate(): void {

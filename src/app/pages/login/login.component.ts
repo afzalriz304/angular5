@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
     var response  =  JSON.parse(data._body);
     sessionStorage.setItem("auth_key",response.data);
 
-		this.router.navigate(['/dashboard']);
+		this.router.navigate(['home/dashboard']);
 	}),error=>{
 		this.router.navigate(['/errorPage']);
 	}

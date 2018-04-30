@@ -1,185 +1,144 @@
- 
-<!-- <app-doctor-navbar (toggleMenu)="menuToggle($event)"></app-doctor-navbar> -->
-
-<div class="dashboard">
-    <app-doctor-navbar (toggleMenu)="menuToggle($event)"></app-doctor-navbar>
-    <div class="row">
-
-        <div class="side-navbar">
-            <app-side-nav (selectComponent)="changeComponent($event)"></app-side-nav>
-        </div>
-
-        <div class="main-body">
-
-        <div class="dashboard" *ngIf="dashboard==true">
-
+<div class="main-body">
+    <div class="dashboard">
         <div class="row">
-  
-          <div class="col-md-4 text-center doctor-operation">
-            <div class="set-margin">
-              
-              <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/personal.svg" />
-              
-              <div>
-              
-                <p type="title" class="w6">
-                  Personal Information
-                </p>
-                
-                <p type="note" class="w4">
-                  Update your personal information like your profile<br> photo, gender and date of birth.
-                </p>
-                
-                <a id="pracProPerCTA" (click)="open('PersonalInformationComponent')" name="personal" type="btn" class="btn btn-light  epilen-btn">
+            <div class="col-md-4 text-center doctor-operation">
+                <div class="set-margin">
+                    <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/personal.svg" />
+                    <div>
+                        <p type="title" class="w6">
+                            Personal Information
+                        </p>
+
+                        <p type="note" class="w4">
+                            Update your personal information like your profile<br> photo, gender and date of birth.
+                        </p>
+
+                        <a id="pracProPerCTA" (click)="open('PersonalInformationComponent')" name="personal" type="btn" class="btn btn-light  epilen-btn">
                   Update
                 </a>
-              
-              </div>
-              
+
+                    </div>
+
+                </div>
             </div>
-          </div>
 
 
-          <div class="col-md-4 text-center doctor-operation">
-            <div class="set-margin">
-              
-              <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/practice.svg" />
-              
-              <div>
-              
-                <p type="title" class="w6">
-                  Practice Information
-                </p>
-                
-                <p type="note" class="w4">
-                  Update your practice information such as Focus<br> areas, experience and languages.
-                </p>
-                
-                <a id="pracProPracCTA" (click)="open('PracticeInformationComponent')" name="practice" type="btn" class="btn btn-light  epilen-btn">
+            <div class="col-md-4 text-center doctor-operation">
+                <div class="set-margin">
+
+                    <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/practice.svg" />
+
+                    <div>
+
+                        <p type="title" class="w6">
+                            Practice Information
+                        </p>
+
+                        <p type="note" class="w4">
+                            Update your practice information such as Focus<br> areas, experience and languages.
+                        </p>
+
+                        <a id="pracProPracCTA" (click)="open('PracticeInformationComponent')" name="practice" type="btn" class="btn btn-light  epilen-btn">
                   Update
                 </a>
-              
-              </div>
-              
+
+                    </div>
+
+                </div>
             </div>
-          </div>
 
 
-          <div class="col-md-4 text-center doctor-operation">
-            <div>
-              
-              <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/registration.svg" />
-              
-              <div>
-              
-                <p type="title" class="w6">
-                  Registration Information
-                </p>
-                
-               <p type="note" class="w4">
-                  Update your Registration Information like<br> registration number.
-                </p>
-                
-                <a id="" (click)="open('RegistrationInformationComponent')" name="registration" type="btn" class="btn  btn-light  epilen-btn">
+            <div class="col-md-4 text-center doctor-operation">
+                <div>
+
+                    <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/registration.svg" />
+
+                    <div>
+
+                        <p type="title" class="w6">
+                            Registration Information
+                        </p>
+
+                        <p type="note" class="w4">
+                            Update your Registration Information like<br> registration number.
+                        </p>
+
+                        <a id="" (click)="open('RegistrationInformationComponent')" name="registration" type="btn" class="btn  btn-light  epilen-btn">
                   Update
                 </a>
-              
-              </div>
-              
-            </div>
-          </div>
 
-          <div class="col-md-4 text-center doctor-operation">
-            <div class="set-margin">
-              
-              <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/professional.svg" />
-              
-              <div>
-              
-                <p type="title" class="w6">
-                  Practice Timing
-                </p>
-                
-                <p type="note" class="w4">
-                  Update your professional information like bio and<br> specialization.
-                </p>
-                
-                <a id="pracProProCTA"  (click)="open('PracticeTimingComponent')" name="professional" type="btn" class="btn  btn-light  epilen-btn">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 text-center doctor-operation">
+                <div class="set-margin">
+
+                    <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/professional.svg" />
+
+                    <div>
+
+                        <p type="title" class="w6">
+                            Practice Timing
+                        </p>
+
+                        <p type="note" class="w4">
+                            Update your professional information like bio and<br> specialization.
+                        </p>
+
+                        <a id="pracProProCTA" (click)="open('PracticeTimingComponent')" name="professional" type="btn" class="btn  btn-light  epilen-btn">
                   Update
                 </a>
-              
-              </div>
-              
-            </div>
-          </div>
 
-          <div class="col-md-4 text-center doctor-operation">
-            <div class="set-margin">
-              
-              <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/affiliation.svg" />
-              
-              <div>
-              
-                <p type="title" class="w6">
-                  Affiliations
-                </p>
-                
-                <p type="note" class="w4">
-                  Update your affiliations and information on<br> practice places.
-                </p>
-                
-                <a id="pracProAffCTA" (click)="open('AffiliationsComponent')" name="affiliation" type="btn" class="btn  btn-light  epilen-btn">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 text-center doctor-operation">
+                <div class="set-margin">
+
+                    <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/affiliation.svg" />
+
+                    <div>
+
+                        <p type="title" class="w6">
+                            Affiliations
+                        </p>
+
+                        <p type="note" class="w4">
+                            Update your affiliations and information on<br> practice places.
+                        </p>
+
+                        <a id="pracProAffCTA" (click)="open('AffiliationsComponent')" name="affiliation" type="btn" class="btn  btn-light  epilen-btn">
                   Update
                 </a>
-              
-              </div>
-              
-            </div>
-          </div>
 
-          <div class="col-md-4 text-center doctor-operation">
-            <div>
-              
-                    
-              <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/education.svg" />
-              
-              <div>
-              
-                <p type="title" class="w6">
-                  Education &amp; Training
-                </p>
-                
-                <p type="note" class="w4">
-                  Update information about your education and<br> medical trainings.
-                </p>
-                
-                <a id="pracProEduCTA" (click)="open('EducationAndTrainingComponent')" name="education" type="btn" class="btn  btn-light  epilen-btn">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 text-center doctor-operation">
+                <div>
+
+
+                    <img class="dashboard-svg" src="./assets/images/doctor/practice/profile/education.svg" />
+
+                    <div>
+                        <p type="title" class="w6">
+                            Education &amp; Training
+                        </p>
+                        <p type="note" class="w4">
+                            Update information about your education and<br> medical trainings.
+                        </p>
+                        <a id="pracProEduCTA" (click)="open('EducationAndTrainingComponent')" name="education" type="btn" class="btn  btn-light  epilen-btn">
                   Update
                 </a>
-                  
-              
-              </div>
-              
+                    </div>
+                </div>
             </div>
-          </div>
-
         </div>
-      </div>
-
-      <div *ngIf="availability==true">
-          <div class="row">
-              <div class="col-md-12">
-                <app-availability></app-availability>
-              </div>
-          </div>
-      </div>
-
-      <!-- <div *ngIf="about==true">
-        Like many businesses that confront convention, Epilen’s origin came from a simple place: a belief that there had to be a better way to take care of people when they access healthcare. 
-        That's why, with the technology to create a more intelligent solution and the compassion to know that every person matters, we are delivering a connected healthcare experience for everyone who wants the best care for themselves.
-      </div> -->
-
     </div>
-  </div>
-  
 </div>

@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
   availability: boolean;
   dashboard: boolean;
   title = 'app';
-  loading:boolean=false;
+  // loading:boolean=false;
   response:any;
   addPatientAnimate={
     state:'small'
@@ -73,7 +73,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(){
     this.response={};
     this.animateMe('',this.addPatientAnimate);
-    this.dashboard = true;
+    // this.dashboard = true;
   }
 
   
@@ -171,35 +171,33 @@ export class DashboardComponent implements OnInit {
         this.modalService.open(EducationAndTrainingComponent,{
           size: 'lg'
         }).componentInstance.id = this.Doctor.id;
-        //this.router.navigate(['/dashboard/professional']); 
+        // this.router.navigate(['/dashboard/professional']); 
         break;
-
-        
       default:
         alert('not developed')
         break;
     }
-    
-  }
-
-  resetAll(){
-    this.dashboard = false;
-    this.availability = false;
-    this.about = false;
 
   }
 
-  changeComponent(response) {
-    this.resetAll();
-    console.log(response);
-    switch(response) {
-      case 'availability': this.availability = true;
-                        break;
-      case 'dashboard': this.dashboard = true;
-                        break;
-      case 'about': this.about = true;
-                        break;
-    }
-  }
+  // resetAll(){
+  //   this.dashboard = false;
+  //   this.availability = false;
+  //   this.about = false;
+
+  // }
+
+  // changeComponent(response) {
+  //   this.resetAll();
+  //   console.log(response);
+  //   switch(response) {
+  //     case 'availability': this.availability = true;
+  //                       break;
+  //     case 'dashboard': this.dashboard = true;
+  //                       break;
+  //     case 'about': this.about = true;
+  //                       break;
+  //   }
+  // }
 
 }

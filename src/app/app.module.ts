@@ -28,6 +28,7 @@ import { DoctorNavbarComponent } from './common/doctor-navbar/doctor-navbar.comp
 import { SideNavComponent } from './common/side-nav/side-nav.component';
 import { AvailabilityComponent } from './pages/availability/availability.component';
 import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
     LoaderComponent,
     DoctorNavbarComponent,
     SideNavComponent,
-    AvailabilityComponent
+    AvailabilityComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,7 @@ import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
     PersonalInformationComponent, PracticeInformationComponent,
     RegistrationInformationComponent, AffiliationsComponent,
     EducationAndTrainingComponent, PracticeTimingComponent],
-  providers: [AppService,AuthGuard,UserService],
+  providers: [AppService, AuthGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

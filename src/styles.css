@@ -1,6 +1,7 @@
 html, body , div{
 	font-family: 'Quicksand', sans-serif;
 	font-size: 13px;
+	overflow-x: hidden;
 }
 
 .epilen-btn-primary{

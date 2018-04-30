@@ -12,67 +12,29 @@ import { RegistrationInformationComponent } from './pages/registration-informati
 import { AffiliationsComponent } from './pages/affiliations/affiliations.component';
 import { EducationAndTrainingComponent } from './pages/education-and-training/education-and-training.component';
 import { AvailabilityComponent } from './pages/availability/availability.component';
+import { HomeComponent } from './pages/home/home.component';
 
-
-export const AppRoutes=[
-
-  { 
-    path: '', 
-    redirectTo: 'login', 
-    pathMatch: 'full'
-  },
-
-  {
-  	path: "login",
-  	component: LoginComponent
-	},
-	{
-  	path: "register",
-  	component: RegisterComponent
-	},
-	{
-		path: "errorPage",
-		component: ErrorPageComponent
-  },
-  {
-		path: "available",
-		component: AvailabilityComponent
-	},
-
-  //required login
-  {
-    path: "dashboard",
-    component: DashboardComponent,
-    // data: { requiresLogin: true },
-    // canActivate: [AuthGuard],
-    children:[
-      {
-        path:"professional",
-        component:ProfessionalInformationComponent
-      },
-      {
-        path:"Personal",
-        component:PersonalInformationComponent
-      },
-      {
-        path:"Practice",
-        component:PracticeInformationComponent
-      },
-      {
-        path:"Registration",
-        component:RegistrationInformationComponent
-      },
-      {
-        path:"Affiliations",
-        component:AffiliationsComponent
-      },
-      {
-        path:"Education",
-        component:EducationAndTrainingComponent
-      }
+export const AppRoutes = [
+  { path: '', redirectTo: 'login',  pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'errorPage', component: ErrorPageComponent },
+  // required login
+  { path: 'home', component: HomeComponent,
+  //  data: { requiresLogin: true },
+    canActivate: [AuthGuard],
+    children: [
+      { path: ''     , redirectTo: '/home/dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent},
+      { path: 'available', component: AvailabilityComponent },
+      { path: 'professional', component: ProfessionalInformationComponent  },
+      { path: 'Personal', component: PersonalInformationComponent },
+      { path: 'Practice', component: PracticeInformationComponent },
+      { path: 'Registration', component: RegistrationInformationComponent },
+      { path: 'Affiliations', component: AffiliationsComponent },
+      { path: 'Education', component: EducationAndTrainingComponent }
     ]
   }
-
-]
+];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(AppRoutes);

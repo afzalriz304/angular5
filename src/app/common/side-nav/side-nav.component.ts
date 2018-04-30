@@ -20,6 +20,10 @@ export class SideNavComponent implements OnInit {
     this.selectComponent.emit(component);
   }
 
+  callDashbord() {
+    this.router.navigate('dashboard');
+  }
+
   about() {
     window.open ("http://www.epilen.com/about/");
 
