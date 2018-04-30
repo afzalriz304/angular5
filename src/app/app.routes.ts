@@ -11,6 +11,7 @@ import { PracticeInformationComponent } from './pages/practice-information/pract
 import { RegistrationInformationComponent } from './pages/registration-information/registration-information.component';
 import { AffiliationsComponent } from './pages/affiliations/affiliations.component';
 import { EducationAndTrainingComponent } from './pages/education-and-training/education-and-training.component';
+import { AvailabilityComponent } from './pages/availability/availability.component';
 
 
 export const AppRoutes=[
@@ -32,6 +33,10 @@ export const AppRoutes=[
 	{
 		path: "errorPage",
 		component: ErrorPageComponent
+  },
+  {
+		path: "available",
+		component: AvailabilityComponent
 	},
 
   //required login

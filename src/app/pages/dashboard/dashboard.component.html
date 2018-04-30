@@ -11,7 +11,7 @@
 
         <div class="main-body">
 
-        <div class="dashboard">
+        <div class="dashboard" *ngIf="dashboard==true">
 
         <div class="row">
   
@@ -162,12 +162,22 @@
               
             </div>
           </div>
-  
-
-
 
         </div>
       </div>
+
+      <div *ngIf="availability==true">
+          <div class="row">
+              <div class="col-md-12">
+                <app-availability></app-availability>
+              </div>
+          </div>
+      </div>
+
+      <!-- <div *ngIf="about==true">
+        Like many businesses that confront convention, Epilen’s origin came from a simple place: a belief that there had to be a better way to take care of people when they access healthcare. 
+        That's why, with the technology to create a more intelligent solution and the compassion to know that every person matters, we are delivering a connected healthcare experience for everyone who wants the best care for themselves.
+      </div> -->
 
     </div>
   </div>

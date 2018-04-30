@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-nav',
@@ -10,7 +11,7 @@ export class SideNavComponent implements OnInit {
 
   @Output() selectComponent = new EventEmitter<String>();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -18,4 +19,10 @@ export class SideNavComponent implements OnInit {
   changeComponent(component){
     this.selectComponent.emit(component);
   }
+
+  about() {
+    window.open ("http://www.epilen.com/about/");
+
+  }
+
 }

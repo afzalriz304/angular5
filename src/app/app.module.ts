@@ -26,7 +26,8 @@ import { AuthGuard } from './authentication/AuthGuard';
 import { UserService } from './authentication/userService';
 import { DoctorNavbarComponent } from './common/doctor-navbar/doctor-navbar.component';
 import { SideNavComponent } from './common/side-nav/side-nav.component';
-
+import { AvailabilityComponent } from './pages/availability/availability.component';
+import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { SideNavComponent } from './common/side-nav/side-nav.component';
     AddSlotTemplateComponent,
     LoaderComponent,
     DoctorNavbarComponent,
-    SideNavComponent
+    SideNavComponent,
+    AvailabilityComponent
   ],
   imports: [
     BrowserModule,
@@ -56,10 +58,15 @@ import { SideNavComponent } from './common/side-nav/side-nav.component';
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
+    NgxMyDatePickerModule.forRoot(),
     BrowserAnimationsModule,
     NgbModule.forRoot()
   ],
-  entryComponents:[LoaderComponent,ModalComponent,ProfessionalInformationComponent,PersonalInformationComponent,PracticeInformationComponent,RegistrationInformationComponent,AffiliationsComponent,EducationAndTrainingComponent,PracticeTimingComponent],
+  entryComponents: [ LoaderComponent, ModalComponent,
+    ProfessionalInformationComponent,
+    PersonalInformationComponent, PracticeInformationComponent,
+    RegistrationInformationComponent, AffiliationsComponent,
+    EducationAndTrainingComponent, PracticeTimingComponent],
   providers: [AppService,AuthGuard,UserService],
   bootstrap: [AppComponent]
 })

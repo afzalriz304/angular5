@@ -40,6 +40,9 @@ import {
 })
 export class DashboardComponent implements OnInit {
 
+  about: boolean;
+  availability: boolean;
+  dashboard: boolean;
   title = 'app';
   loading:boolean=false;
   response:any;
@@ -70,6 +73,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(){
     this.response={};
     this.animateMe('',this.addPatientAnimate);
+    this.dashboard = true;
   }
 
   
@@ -176,6 +180,26 @@ export class DashboardComponent implements OnInit {
         break;
     }
     
+  }
+
+  resetAll(){
+    this.dashboard = false;
+    this.availability = false;
+    this.about = false;
+
+  }
+
+  changeComponent(response) {
+    this.resetAll();
+    console.log(response);
+    switch(response) {
+      case 'availability': this.availability = true;
+                        break;
+      case 'dashboard': this.dashboard = true;
+                        break;
+      case 'about': this.about = true;
+                        break;
+    }
   }
 
 }

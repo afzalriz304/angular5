@@ -1,0 +1,29 @@
+<div aria-label="breadcrumb ">
+    <ol class="breadcrumb arr-right  ">
+        <li class="breadcrumb-item "><a href="#" class="text-dark">Home</a></li>
+        <li class="breadcrumb-item text-dark active" aria-current="page">Availability</li>
+    </ol>
+</div>
+
+<div class="card personal-info">
+    <div class="card-header">
+        <div class="row">
+              Availability
+        </div>
+    </div>
+    <div class="card-body">
+        
+                Date of Availability -  
+        <div class="start" *ngIf="s">
+                Start Date - {{s}}
+         
+            <p class="end" *ngIf="e">
+                    End Date - {{e}}
+            </p> 
+        </div>
+        <div *ngIf="firstSlot">Slots -
+            From - {{firstSlot.from}}  To - {{firstSlot.to}}
+
+        </div>
+    </div>
+</div>
